@@ -1,3 +1,4 @@
 joycful.db
 media/
-*.py
+*.pyc
+static/fonts/
