@@ -1,0 +1,90 @@
+{% extends 'photography/includes/base.html' %}
+{% load thumbnail %}
+
+{% block carousel %}
+<!-- <div class="row">
+    <div class="cb-slideshow">
+        <ul>
+            <li><span>Image 01</span><div><h3></h3></div></li>
+            <li><span>Image 02</span><div><h3></h3></div></li>
+            <li><span>Image 03</span><div><h3></h3></div></li>
+            <li><span>Image 04</span><div><h3></h3></div></li>
+            <li><span>Image 05</span><div><h3></h3></div></li>
+            <li><span>Image 06</span><div><h3></h3></div></li>
+        </ul>
+    </div>
+</div>
+ -->
+
+
+<div id="myCarousel" class="carousel slide fixed" data-ride="carousel">
+  <!-- Indicators -->
+<!--   <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol> -->
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" id="scene">
+    <div class="item active">
+      <div class="fill" style="background-image:url('../static/img/1.jpg');">
+        <div class="container">
+          
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="fill" style="background-image:url('../static/img/2.jpg');">
+        <div class="container">
+          
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="fill" style="background-image:url('../static/img/3.jpg');">
+        <div class="container">
+          
+        </div>
+      </div>
+    </div>
+    ...
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+{% endblock %}
+
+
+{% block thumbnails %}
+
+
+<div class="row">
+	    {% if photos %}
+	            {% for photo in photos %}
+
+	                {% thumbnail photo.image "300x300" crop="center" as im %}
+	                <div class="col-md-3">
+	                	<div class="thumbnail">
+	                		<a href="#"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
+	                		<div class="caption">{{photo.caption}}</div>
+	                	</div>
+	                </div>
+	                {% endthumbnail %}
+	            {% endfor %}
+	    {% else %}
+	        <strong>there is no photos or there is problem loading photos</strong>
+	    {% endif %}
+
+ </div>
+
+
+
+{% endblock %}

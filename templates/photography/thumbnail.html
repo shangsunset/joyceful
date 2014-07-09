@@ -1,0 +1,18 @@
+{% extends 'photography/includes/base.html' %}
+{% load thumbnail %}
+
+{% block content %}
+<div class="thumbnails">
+    {% if photos %}
+        <ul>
+            {% for photo in photos %}
+                {% thumbnail photo.photo "300x300" crop="center" as im %}
+                <a href="#"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
+                {% endthumbnail %}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <strong>there is no photos or there is problem loading photos</strong>
+    {% endif %}
+</div>
+{% endblock %}
