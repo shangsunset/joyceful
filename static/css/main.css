@@ -272,7 +272,9 @@ html, body {
     background-attachment: fixed;
 }
 
-
+.carousel-control.left, .carousel-control.right {
+    background-image: none !important
+}
 
 
 /* ==========================================================================

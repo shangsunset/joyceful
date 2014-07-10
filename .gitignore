@@ -2,3 +2,4 @@ joycful.db
 media/
 *.pyc
 static/fonts/
+.DS_Store

@@ -1,7 +1,7 @@
 {% extends 'photography/includes/base.html' %}
 {% load thumbnail %}
 
-{% block carousel %}
+{% block content %}
 <!-- <div class="row">
     <div class="cb-slideshow">
         <ul>
@@ -17,47 +17,53 @@
  -->
 
 
-<div id="myCarousel" class="carousel slide fixed" data-ride="carousel">
-  <!-- Indicators -->
-<!--   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol> -->
+	<div id="scene" class="carousel slide fixed scene" data-ride="carousel">
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" id="scene">
-    <div class="item active">
-      <div class="fill" style="background-image:url('../static/img/1.jpg');">
-        <div class="container">
-          
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="fill" style="background-image:url('../static/img/2.jpg');">
-        <div class="container">
-          
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="fill" style="background-image:url('../static/img/3.jpg');">
-        <div class="container">
-          
-        </div>
-      </div>
-    </div>
-    ...
-  </div>
+	
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner layer" data-depth="0.00">
+	<div class="item active">
+	  <div class="fill" style="background-image:url('../static/img/1.jpg');">
+	    <div class="container">
+	      
+	    </div>
+	  </div>
+	</div>
+	<div class="item">
+	  <div class="fill" style="background-image:url('../static/img/2.jpg');">
+	    <div class="container">
+	      
+	    </div>
+	  </div>
+	</div>
+	<div class="item">
+	  <div class="fill" style="background-image:url('../static/img/3.jpg');">
+	    <div class="container">
+	      
+	    </div>
+	  </div>
+	</div>
+	...
+	</div>
+
+	<!-- Indicators -->
+<!-- 	<ol class="carousel-indicators">
+	<li data-target="#scene" data-slide-to="0" class="active"></li>
+	<li data-target="#scene" data-slide-to="1"></li>
+	<li data-target="#scene" data-slide-to="2"></li>
+	</ol> -->
+
+	<!-- Controls -->
+
+	<a class="noBgImage left carousel-control layer " href="#scene" role="button" data-slide="prev" data-depth="0.40">
+	<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+	<a class="right carousel-control layer noBgImage" href="#scene" role="button" data-slide="next" data-depth="0.40">
+	<span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
+
+
 </div>
 
 {% endblock %}
