@@ -3,3 +3,4 @@ media/
 *.pyc
 static/fonts/
 .DS_Store
+photography/migrations/

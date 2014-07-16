@@ -5,7 +5,7 @@
 
 
 <div class="row">
-	    {% if photos %}
+	    {# {% if photos %} #}
 	            {% for photo in photos %}
 
 	                {% thumbnail photo.image "300x300" crop="center" as im %}
@@ -16,9 +16,9 @@
 	                </div>
 	                {% endthumbnail %}
 	            {% endfor %}
-	    {% else %}
-	        <strong>there is no photos or there is problem loading photos</strong>
-	    {% endif %}
+	    {# {% else %} #}
+	        {# <strong>there is no photos or there is problem loading photos</strong> #}
+	    {# {% endif %} #}
 
  </div>
 

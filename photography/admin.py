@@ -11,6 +11,7 @@ class PhotoInline(admin.TabularInline):
 class AlbumAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'created')
     inlines = [(PhotoInline)]
+    prepopulated_fields = {"slug": ("name",)}
 
 
 

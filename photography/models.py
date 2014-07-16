@@ -5,9 +5,17 @@ class Album(models.Model):
     name = models.CharField(max_length=120, null=False, blank=True)
     description = models.CharField(max_length=400, null=True, blank=True)
     created = models.DateField('Date Created')
+    slug = models.SlugField(max_length=40, unique=True)
+
+    def get_absolute_url(self):
+        return "%s" % (self.slug)
+
 
     def __unicode__(self):
         return self.name
+
+    class Meta:
+        ordering = ["-created"]
 
 
 class Photo(models.Model):
@@ -19,7 +27,7 @@ class Photo(models.Model):
     slug = models.SlugField(max_length=40, unique=True)
 
     def get_absolute_url(self):
-        return "/%s/%s/%s/" % (self.pub_date.year, self.pub_date.month, self.slug)
+        return "%s" % (self.slug)
 
     def __unicode__(self):
         return self.title
