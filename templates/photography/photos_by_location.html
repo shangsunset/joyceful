@@ -1,0 +1,32 @@
+{% extends 'photography/includes/base.html' %}
+{% load thumbnail %}
+
+{% block content %}
+
+<div class="row">
+    <div class="album_cover">
+        <img src="/media/{{album.album_cover}}">
+    </div>
+</div>
+
+<div class="row">
+	    {% if photos %}
+	            {% for photo in photos %}
+
+	                {% thumbnail photo.image "300x300" crop="center" as im %}
+	                <div class="col-md-3">
+	                	<div class="thumbnail">
+	                		<a href="#"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
+	                	</div>
+	                </div>
+	                {% endthumbnail %}
+	            {% endfor %}
+	    {% else %}
+	        <strong>there is no photos or there is problem loading photos</strong>
+	    {% endif %}
+
+ </div>
+
+
+
+{% endblock %}

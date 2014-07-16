@@ -11,11 +11,11 @@ urlpatterns = patterns('',
     url(r'^', include('photography.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-)
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-if settings.DEBUG:
-    urlpatterns += patterns(
-        'django.views.static',
-        (r'media/(?P<path>.*)',
-        'serve',
-        {'document_root': settings.MEDIA_ROOT}), )
+# if settings.DEBUG:
+#     urlpatterns += patterns(
+#         'django.views.static',
+#         (r'media/(?P<path>.*)',
+#         'serve',
+#         {'document_root': settings.MEDIA_ROOT}), )

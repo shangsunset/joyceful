@@ -20,7 +20,9 @@ $(document).keyup(function(e) {
 
 
 
-$('.carousel').carousel();
+$('.carousel').carousel({
+    pause: "false"
+});
 
 var scene = document.getElementById('scene');
 var parallax = new Parallax(scene);

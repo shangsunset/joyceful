@@ -2,5 +2,7 @@ joycful.db
 media/
 *.pyc
 static/fonts/
+static/img/
 .DS_Store
 photography/migrations/
+

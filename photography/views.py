@@ -16,21 +16,19 @@ def gallery(request):
     context_dict = {'photos': photos}
     return render_to_response('photography/gallery.html', context_dict, context)
 
-def album_by_location(request, slug):
+def photos_by_location(request, slug):
     context = RequestContext(request)
     album_name = slug.replace('-', ' ')
     context_dict = {'album_name': album_name}
-    print album_name
 
     try:
         album = Album.objects.get(name=album_name)
         photos = Photo.objects.filter(album=album)
-        print 'dsadfasdfsadf'
         context_dict['album'] = album
         context_dict['photos'] = photos
     except Album.DoesNotExist:
         print 'damn'
         pass
 
-    return render_to_response('photography/album_by_location.html', context_dict, context)
+    return render_to_response('photography/photos_by_location.html', context_dict, context)
 
