@@ -207,14 +207,14 @@ html, body {
     line-height: 24px;
     font-size: 14px;
     width: 100%;
-    background: #000;
+    /* background: #000; */
     text-transform: uppercase;
     z-index: 9999;
     position: absolute;
     top: 0;
-    -moz-box-shadow: 1px 0px 2px #000;
-    -webkit-box-shadow: 1px 0px 2px #000;
-    box-shadow: 1px 0px 2px #000;
+    /* -moz-box-shadow: 1px 0px 2px #000; */
+    /* -webkit-box-shadow: 1px 0px 2px #000; */
+    /* box-shadow: 1px 0px 2px #000; */
 }
 .top-menu-bar a{
     padding: 0px 10px;
@@ -255,7 +255,7 @@ html, body {
     position: absolute;
     width: 110% !important;
     left: -5%;
-    /*top: -5%;*/
+    top: -5%;
 }
 
 .fill{width:100%;height:100%;background-position:center;}
@@ -284,9 +284,18 @@ html, body {
     background-image: none !important
 }
 
+#album_cover {
 
+  background-image:url('../../static/img/7.jpg');
+  background-size: cover;
+  width:100%;
+  height:450px;
 
+}        
 
+.ab-light {
+  color:black;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
