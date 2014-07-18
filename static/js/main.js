@@ -49,7 +49,7 @@ function toggleNav() {
 
 function menuColor() {
 
-        if ($('.fill').hasClass('ab-light')) {
+        if ($('#album_cover>div').hasClass('ab-light')) {
             $('.top-menu-bar a').css('color', 'black');
             console.log('sdafasdfsdf');
         }

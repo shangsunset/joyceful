@@ -116,17 +116,17 @@ html, body {
     height: 100%;
     position: relative;
 
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    /* -webkit-transform: translateX(0); */
+    /* transform: translateX(0); */
+    /*  */
+    /* -webkit-transform: translate3d(0, 0, 0); */
+    /* transform: translate3d(0, 0, 0); */
 
     -webkit-transition: -webkit-transform .33s cubic-bezier(1,0,.61,.15);
     transition: -webkit-transform .33s cubic-bezier(1,0,.61,.15);
 
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    /* -webkit-backface-visibility: hidden; */
+    /* backface-visibility: hidden; */
 
     padding: 0;
 
@@ -284,17 +284,25 @@ html, body {
     background-image: none !important
 }
 
-#album_cover {
+/* #album_cover { */
+/*   width:100%; */
+/*   height:85%; */
+/* } */
 
-  background-image:url('../../static/img/7.jpg');
+#album-cover {
+
+	background-attachment: fixed;
+  background-image:url('../../static/img/1.jpg');
   background-size: cover;
   width:100%;
-  height:450px;
+  height:85%;
+}
 
+.fixedImg {
 }        
 
-.ab-light {
-  color:black;
+.album-cover-text {
+  margin:0 auto;
 }
 /* ==========================================================================
    Helper classes

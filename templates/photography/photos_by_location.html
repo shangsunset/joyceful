@@ -3,28 +3,28 @@
 
 {% block content %}
 
-<div class="row">
-        <div id="album_cover" data-adaptive-background='1' data-ab-css-background='1'></div>
+<div id="album-cover" class="fixedImg">
+    <h2 class="album-cover-text">safasfaskdjfsdf</h2>
 </div>
 
-<div class="row">
-	    {% if photos %}
-	            {% for photo in photos %}
+<div class="photo-thumbnails">
+    <div class="row">
+            {% if photos %}
+                    {% for photo in photos %}
 
-	                {% thumbnail photo.image "300x300" crop="center" as im %}
-	                <div class="col-md-3">
-	                	<div class="thumbnail">
-	                		<a href="#"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
-	                	</div>
-	                </div>
-	                {% endthumbnail %}
-	            {% endfor %}
-	    {% else %}
-	        <strong>there is no photos or there is problem loading photos</strong>
-	    {% endif %}
+                        {% thumbnail photo.image "300x300" crop="center" as im %}
+                        <div class="col-md-3">
+                            <div class="thumbnail">
+                                <a href="#"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
+                            </div>
+                        </div>
+                        {% endthumbnail %}
+                    {% endfor %}
+            {% else %}
+                <strong>there is no photos or there is problem loading photos</strong>
+            {% endif %}
 
- </div>
-
-
+    </div>
+</div>
 
 {% endblock %}
