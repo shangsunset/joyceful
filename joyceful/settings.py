@@ -60,6 +60,7 @@ INSTALLED_APPS = (
     'south',
     'photography',
     'sorl.thumbnail',
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (

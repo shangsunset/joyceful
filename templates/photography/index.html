@@ -1,25 +1,11 @@
 {% extends 'photography/includes/base.html' %}
-{% load thumbnail %}
+{# {% load thumbnail %} #}
 
 {% block content %}
-<!-- <div class="row">
-    <div class="cb-slideshow">
-        <ul>
-            <li><span>Image 01</span><div><h3></h3></div></li>
-            <li><span>Image 02</span><div><h3></h3></div></li>
-            <li><span>Image 03</span><div><h3></h3></div></li>
-            <li><span>Image 04</span><div><h3></h3></div></li>
-            <li><span>Image 05</span><div><h3></h3></div></li>
-            <li><span>Image 06</span><div><h3></h3></div></li>
-        </ul>
-    </div>
-</div>
- -->
 
 
-	<div id="scene" class="carousel slide fixed scene" data-ride="carousel">
+	<div id="scene" class="carousel slide scene" data-ride="carousel">
 
-	<!-- <div class="layer" data-depth="0.00"></div> -->
 
 	<!-- Wrapper for slides -->
 	<div id="myCarousel" class="carousel-inner layer" data-depth="0.10">
@@ -78,28 +64,28 @@
 {% endblock %}
 
 
-{% block thumbnails %}
-
-
-<div class="row">
-	    {% if photos %}
-	            {% for photo in photos %}
-
-	                {% thumbnail photo.image "300x300" crop="center" as im %}
-	                <div class="col-md-3">
-	                	<div class="thumbnail">
-	                		<a href="#"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
-	                		<div class="caption">{{photo.caption}}</div>
-	                	</div>
-	                </div>
-	                {% endthumbnail %}
-	            {% endfor %}
-	    {% else %}
-	        <strong>there is no photos or there is problem loading photos</strong>
-	    {% endif %}
-
- </div>
-
-
-
-{% endblock %}
+{# {% block thumbnails %} #}
+{#  #}
+{#  #}
+{# <div class="row"> #}
+{# 	    {% if photos %} #}
+{# 	            {% for photo in photos %} #}
+{#  #}
+{# 	                {% thumbnail photo.image "300x300" crop="center" as im %} #}
+{# 	                <div class="col-md-3"> #}
+{# 	                	<div class="thumbnail"> #}
+{# 	                		<a href="#"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a> #}
+{# 	                		<div class="caption">{{photo.caption}}</div> #}
+{# 	                	</div> #}
+{# 	                </div> #}
+{# 	                {% endthumbnail %} #}
+{# 	            {% endfor %} #}
+{# 	    {% else %} #}
+{# 	        <strong>there is no photos or there is problem loading photos</strong> #}
+{# 	    {% endif %} #}
+{#  #}
+{#  </div> #}
+{#  #}
+{#  #}
+{#  #}
+{# {% endblock %} #}

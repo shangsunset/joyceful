@@ -63,9 +63,6 @@
 </div>
 
 
-    {# <div class="container"> #}
-    {#     {% block thumbnails %}{% endblock %} #}
-    {# </div> #}
 
 
 
@@ -80,6 +77,11 @@
     <script src="{% static 'js/jquery.adaptive-backgrounds.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
 
+    <script>
+
+     var scene = document.getElementById('scene');
+     var parallax = new Parallax(scene);
+    </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

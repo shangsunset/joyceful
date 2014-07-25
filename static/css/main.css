@@ -108,7 +108,7 @@ html, body {
 #site-wrapper {
   position: relative;
   width: 100%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   height: 100%; 
 }
 #site-canvas {
@@ -124,6 +124,7 @@ html, body {
     /* transform: translate3d(0, 0, 0); */
 
     -webkit-transition: -webkit-transform .33s cubic-bezier(1,0,.61,.15);
+    -moz-transition: -moz-transform .33s cubic-bezier(1,0,.61,.15);
     transition: -webkit-transform .33s cubic-bezier(1,0,.61,.15);
 
     /* -webkit-backface-visibility: hidden; */
@@ -139,8 +140,10 @@ html, body {
 .show-nav #site-canvas {
   -webkit-transform: translateX(-200px);
   transform: translateX(-200px);
+  -moz-transform: translateX(-200px);
   
   -webkit-transform: translate3d(-200px, 0, 0);
+  -moz-transform: translate3d(-200px, 0, 0);
   transform: translate3d(-200px, 0, 0);
 }
 #site-menu {
@@ -154,11 +157,14 @@ html, body {
     padding: 3px;
 }
 
+#site-menu ul {
+  margin-top:10px;
+}
 #site-menu a {
     text-transform: uppercase;
     color: grey;
     letter-spacing: 1px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
 }
 
@@ -250,7 +256,7 @@ html, body {
 
 
 
-.carousel,.item,.active{height:100%; overflow: hidden;}
+.carousel,.item,.active{height:100%;  overflow: hidden; }
 
 .carousel-inner{
     height:110%;
@@ -278,23 +284,15 @@ html, body {
     }
 }
 
-.fixed {
-    background-attachment: fixed;
-}
 
 .carousel-control.left, .carousel-control.right {
     background-image: none !important
 }
 
-/* #album_cover { */
-/*   width:100%; */
-/*   height:85%; */
-/* } */
-
 #album-cover {
 
 	background-attachment: fixed;
-  background-image:url('../../static/img/1.jpg');
+  background-image:url('../../static/img/6.jpg');
   background-size: cover;
   width:100%;
   height:85%;
@@ -303,27 +301,38 @@ html, body {
 .photo-thumbnails {
   z-index:10;
   position:relative;
+  display:inline-block;
 }
 
 .album-cover-text {
   margin:0 auto;
 }
 
-.photo-filters {
+#photo-filters {
   position:relative;
   width:100%;
   height:15%;
-  z-index:10;
+  z-index:20;
   background-color:white;
 }
 
-.photo-filters ul {
-  margin:0 auto;
+#photo-filters ul {
+  margin:0 100px;
+  padding-top:30px;
 }
-.photo-filters li {
-  float:left;
-  padding-right:20px;
+
+#photo-filters li {
+  text-transform:uppercase;
+  font-weight:500;
+  display:inline-block;
+  margin:0 100px;
   font-size:15px;
+}
+
+.fixed { 
+   position: fixed !important; 
+   zoom:1; /* This enables hasLayout, which is required for older IE browsers */
+   top: 0px !important;
 }
 /* ==========================================================================
    Helper classes
