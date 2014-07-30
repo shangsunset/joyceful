@@ -32,7 +32,6 @@
             <div id="site-menu">
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/gallery">Gallery</a></li>
                     {% for album in albums %}
                     <li><a href="/gallery/{{album.get_absolute_url}}">{{album.name}}</a></li>
                     {% endfor %}

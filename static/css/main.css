@@ -108,7 +108,7 @@ html, body {
 #site-wrapper {
   position: relative;
   width: 100%;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   height: 100%; 
 }
 #site-canvas {
@@ -147,7 +147,7 @@ html, body {
   transform: translate3d(-200px, 0, 0);
 }
 #site-menu {
-    /* z-index: 9; */
+    visibility: hidden;
     width: 200px;
     height: 100%;
     position: absolute;
@@ -227,8 +227,8 @@ html, body {
 .top-menu-bar a{
     padding: 0px 10px;
     letter-spacing: 1px;
-    color: #ddd;
     display: block;
+    color:#fff;
     float: left;
 }
 .top-menu-bar a:hover{
@@ -292,21 +292,34 @@ html, body {
 #album-cover {
 
 	background-attachment: fixed;
-  background-image:url('../../static/img/6.jpg');
   background-size: cover;
   width:100%;
-  height:85%;
+  height:100%;
+  position:relative;
+
 }
 
 .photo-thumbnails {
   z-index:10;
   position:relative;
   display:inline-block;
+  padding:50px;
 }
 
 .album-cover-text {
-  margin:0 auto;
+  text-transform:uppercase;
+  position: absolute;
+  height: 80px;
+  color:#fff;
 }
+
+.album-cover-text span {
+  border: solid 2px;
+  font-size:2.5vw;
+  font-weight:normal;
+  padding:5px;
+}
+
 
 #photo-filters {
   position:relative;
@@ -524,27 +537,3 @@ html, body {
     }
 }
 
-.site-row{
-    display:inline-block;
-    width: 100%;
-    position: relative;
-}
-.site-row.max{
-    height: 100%;
-    /*overflow: hidden;*/
-}
-
-.site-row-content{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-}
-.site-row-content.max{
-    width: 100%;
-    height: 100%;
-}
-
-.site-row-bg.max{
-    height: 100%;
-    width: 100%;
-}

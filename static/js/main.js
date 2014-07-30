@@ -1,9 +1,10 @@
 (function(){
-    $.adaptiveBackground.run()
 
+//menu toggle
     $('.toggle-nav').click(function() {
         // Calling a function in case you want to expand upon this.
         toggleNav();
+    $('#site-menu').css('visibility', 'visible')
 
     });
 
@@ -16,9 +17,33 @@
         } 
     });
 
+//postions of album cover text
+    var textHeight = $('.album-cover-text').height();
+    var windowHeight = $(window).height();
+    var textPosTop = windowHeight/2-textHeight/2 
+
+    var textWidth = $('.album-cover-text').width();
+    var windowWidth = $(window).width();
+    var textPosLeft = windowWidth/2-textWidth/2 
+
+    $('.album-cover-text').css({left: textPosLeft, top: textPosTop})
 
 
+    $(window).on('resize', function() {
+        
+        var textHeight = $('.album-cover-text').height();
+        var windowHeight = $(window).height();
+        var textPosTop = windowHeight/2-textHeight/2 
 
+        var textWidth = $('.album-cover-text').width();
+        var windowWidth = $(window).width();
+        var textPosLeft = windowWidth/2-textWidth/2 
+
+        $('.album-cover-text').css({left: textPosLeft, top: textPosTop})
+    })
+
+
+/*=====================================================
     var fromTop = $('#photo-filters').offset().top;
     var filtersHeight = $('#photo-filters').height();
 
@@ -39,12 +64,7 @@
         filtersHeight = $('#photo-filters').height();
         
     })
-
-    // $('.carousel').carousel({
-    //     pause: "false"
-    // });
-
-
+==========================================================*/
 
 })();
 
@@ -63,19 +83,6 @@ function toggleNav() {
 
 }
 
-function menuColor() {
-
-        if ($('#album_cover>div').hasClass('ab-light')) {
-            $('.top-menu-bar a').css('color', 'black');
-            console.log('sdafasdfsdf');
-        }
-        else {
-            $('.top-menu-bar a').css('color', 'white');
-            console.log('darkkkkkk');
-
-        }
-
-}
 
 function rgb2hex(rgb) {
     if (/^#[0-9A-F]{6}$/i.test(rgb)) return rgb;
@@ -94,3 +101,4 @@ function getContrastYIQ(hexcolor){
     var yiq = ((r*299)+(g*587)+(b*114))/1000;
     return (yiq >= 128) ? 'black' : 'white';
 }
+

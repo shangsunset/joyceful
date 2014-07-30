@@ -3,36 +3,37 @@
 
 {% block content %}
 
-<div id="album-cover" class="fixedImg">
-    <h2 class="album-cover-text"></h2>
+<div id="album-cover" style="background-image:url('../../media/{{album.album_cover}}')"  data-adaptive-background='1' data-ab-css-background='1'>
+    <div class="album-cover-text"><span>{{album.name}}</span></div>
 </div>
 
+<!--
 <div id="photo-filters">
     <ul>
-        <li>Filter</li>
-        <li>Filter</li>
-        <li>Filter</li>
-        <li>Filter</li>
+        {% for album in albums %}
+        <li><a href="/gallery/{{album.get_absolute_url}}">{{album.name}}</a></li>
+        {% endfor %}
     </ul>
 
 </div>
+--!>
 
 <div class="photo-thumbnails">
-            {% if photos %}
-                    {% for photo in photos %}
-
-                        {% thumbnail photo.image "300x300" crop="center" as im %}
-                        <div class="col-md-3">
-                            <div class="thumbnail">
-                                <a href="#"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
-                            </div>
-                        </div>
-                        {% endthumbnail %}
-                    {% endfor %}
-            {% else %}
-                <strong>there is no photos or there is problem loading photos</strong>
-            {% endif %}
-
+    {% if photos %}
+            <div class="row">
+            {% for photo in photos %}
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                    {% thumbnail photo.image "300x300" crop="center" as im %}
+                        <a href="{{photo.slug}}"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
+                    {% endthumbnail %}
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+    {% else %}
+        <strong>there is no photos or there is problem loading photos</strong>
+    {% endif %}
 </div>
 
 {% endblock %}

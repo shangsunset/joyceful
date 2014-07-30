@@ -32,3 +32,15 @@ def photos_by_location(request, slug):
 
     return render_to_response('photography/photos_by_location.html', context_dict, context)
 
+def photo_detail(request, album_name, slug):
+    context = RequestContext(request)
+    album_name = album_name.replace('_', ' ')
+    photo_name = slug.replace('_', ' ')
+
+    try:
+        photo = Photo.objects.get(title=photo_name)
+        context_dict = {'photo': photo}
+    except Photo.DoesNotExist:
+        pass
+
+    return render_to_response('photography/photo_detail.html', context_dict, context)
