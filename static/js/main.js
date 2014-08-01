@@ -17,29 +17,12 @@
         } 
     });
 
-//postions of album cover text
-    var textHeight = $('.album-cover-text').height();
-    var windowHeight = $(window).height();
-    var textPosTop = windowHeight/2-textHeight/2 
-
-    var textWidth = $('.album-cover-text').width();
-    var windowWidth = $(window).width();
-    var textPosLeft = windowWidth/2-textWidth/2 
-
-    $('.album-cover-text').css({left: textPosLeft, top: textPosTop})
 
 
     $(window).on('resize', function() {
         
-        var textHeight = $('.album-cover-text').height();
-        var windowHeight = $(window).height();
-        var textPosTop = windowHeight/2-textHeight/2 
-
-        var textWidth = $('.album-cover-text').width();
-        var windowWidth = $(window).width();
-        var textPosLeft = windowWidth/2-textWidth/2 
-
-        $('.album-cover-text').css({left: textPosLeft, top: textPosTop})
+        centerElement('#pjax-container');
+        centerElement('.album-cover-text');
     })
 
 
@@ -66,11 +49,21 @@
     })
 ==========================================================*/
 
+    centerElement('.album-cover-text');
+
+    centerElement('#pjax-container');
+    $('.photo-detail').css('right', -$(window).width())
+    $('.thumbnail img').on('click', function() {
+        $('.photo-detail').animate({right: '0px'}, 1000)
+    })
+
+    $(document).pjax('a[data-pjax]', '#pjax-container')
+
+
+
 })();
 
-/*========================================
-=            CUSTOM FUNCTIONS            =
-========================================*/
+
 function toggleNav() {
     if ($('#site-wrapper').hasClass('show-nav')) {
         // Do things on Nav Close
@@ -102,3 +95,18 @@ function getContrastYIQ(hexcolor){
     return (yiq >= 128) ? 'black' : 'white';
 }
 
+
+//postions of album cover text
+function centerElement(target) {
+
+    var element = $(target);
+    var elementHeight = element.height();
+    var windowHeight = $(window).height();
+    var elementPosTop = windowHeight/2-elementHeight/2 
+
+    var elementWidth = element.width();
+    var windowWidth = $(window).width();
+    var elementPosLeft = windowWidth/2-elementWidth/2 
+
+    element.css({left: elementPosLeft, top: elementPosTop})
+}

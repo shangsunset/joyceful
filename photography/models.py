@@ -20,7 +20,7 @@ class Album(models.Model):
 
 
 class Photo(models.Model):
-    album = models.ForeignKey(Album)
+    album = models.ForeignKey(Album, related_name='photos')
     title = models.CharField(max_length=120, null=False, blank=True)
     image = ImageField(upload_to='photos')
     caption = models.CharField(max_length=400, null=True, blank=True)

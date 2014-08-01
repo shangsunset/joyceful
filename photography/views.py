@@ -1,6 +1,8 @@
 from django.shortcuts import render_to_response
 from photography.models import Album, Photo
 from django.template import RequestContext
+from djpjax import pjax
+from django.template.response import TemplateResponse
 
 
 def index(request):
@@ -16,10 +18,11 @@ def gallery(request):
     context_dict = {'photos': photos}
     return render_to_response('photography/gallery.html', context_dict, context)
 
+@pjax()
 def photos_by_location(request, slug):
     context = RequestContext(request)
     album_name = slug.replace('-', ' ')
-    context_dict = {'album_name': album_name}
+    context_dict = {}
 
     try:
         album = Album.objects.get(name=album_name)
@@ -30,12 +33,11 @@ def photos_by_location(request, slug):
         print 'damn'
         pass
 
-    return render_to_response('photography/photos_by_location.html', context_dict, context)
+    return TemplateResponse(request, 'photography/photos_by_location.html', context_dict)
 
 def photo_detail(request, album_name, slug):
     context = RequestContext(request)
-    album_name = album_name.replace('_', ' ')
-    photo_name = slug.replace('_', ' ')
+    photo_name = slug.replace('-', ' ')
 
     try:
         photo = Photo.objects.get(title=photo_name)

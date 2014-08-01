@@ -1,17 +1,13 @@
-{% extends 'photography/includes/base.html' %}
+{# {% extends 'photography/includes/base.html' %} #}
 {% load thumbnail %}
 
 {% block content %}
 
-<div class="row">
 {% if photo %}
-    <div class="photo-detail">
-        <img src="../../media/{{ photo.image }}" >
-    </div>
+<img src="../../media/{{ photo.image }}">
 {% else %}
     <strong>there is no photos or there is problem loading photos</strong>
 {% endif %}
-</div>
 
 {% endblock %}
 
