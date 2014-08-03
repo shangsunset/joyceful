@@ -1,9 +1,8 @@
 {% extends 'photography/includes/base.html' %}
-{% load thumbnail %}
 
 {% block content %}
 
-<div id="album-cover" style="background-image:url('../../media/{{album.album_cover}}')"  data-adaptive-background='1' data-ab-css-background='1'>
+<div id="album-cover" style="background-image:url('../../media/{{album.album_cover}}')">
     <div class="album-cover-text"><span>{{album.name}}</span></div>
 </div>
 
@@ -18,17 +17,17 @@
 </div>
 --!>
 
+<div class="photo-detail">
+    <div class="photo-background"></div>
+    <div id="pjax-container"></div>
+</div>
+
+
 <div class="photo-thumbnails">
     {% if photos %}
             <div class="row">
             {% for photo in photos %}
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                    {% thumbnail photo.image "300x300" crop="center" as im %}
-                        <a data-pjax href="{{photo.slug}}"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
-                    {% endthumbnail %}
-                    </div>
-                </div>
+                        <a data-pjax href="{{photo.slug}}"><img src="../../media/{{ photo.image }}"></a>
             {% endfor %}
             </div>
     {% else %}
@@ -36,8 +35,5 @@
     {% endif %}
 </div>
 
-<div class="photo-detail">
-    <div id="pjax-container"></div>
-</div>
 {% endblock %}
 

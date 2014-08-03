@@ -4,10 +4,11 @@
 {% block content %}
 
 {% if photo %}
-<img src="../../media/{{ photo.image }}">
+<div clas="photo-content">
+    <img  src="../../media/{{ photo.image }}">
+</div>
 {% else %}
     <strong>there is no photos or there is problem loading photos</strong>
 {% endif %}
-
 {% endblock %}
 

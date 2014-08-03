@@ -153,7 +153,7 @@ html, body {
     position: absolute;
     top: 0;
     right: 0px;
-    background: #000;
+    background: #333;
     padding: 3px;
 }
 
@@ -307,6 +307,10 @@ html, body {
   padding:50px;
 }
 
+.photo-thumbnails img {
+  width:25%;
+  height:25%;
+}
 .album-cover-text {
   text-transform:uppercase;
   position: absolute;
@@ -322,21 +326,52 @@ html, body {
 }
 
 .photo-detail {
-
-  position:absolute;
-  top:0;
-  width:100%;
-  height:100vh;
-  min-height:100vh;
+  visibility: hidden;
+  position: fixed;
+  left: 0px;
+  top: 0%;
+  z-index: 301;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 0px;
 }
+
+.photo-background {
+  visibility: hidden;
+  /* position: fixed; */
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 26, 26, 0.9);
+  -webkit-transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -moz-transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.6s cubic-bezier(0.215,0.61,0.355,1);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+
+}
+
 
 #pjax-container {
-  width:50%;
-  height:auto;
-  z-index:10;
   position:absolute;
+  width:100%;
+  height:100%;
+  /* padding:100px; */
+  border: solid 4px black;
+  display:inline-block;
+  z-index:10;
 }
 
+#pjax-container img {
+  width:100%;
+  height:100%;
+  z-index:11;
+
+}
 #photo-filters {
   position:relative;
   width:100%;

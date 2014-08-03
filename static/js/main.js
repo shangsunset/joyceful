@@ -18,6 +18,8 @@
     });
 
 
+    centerElement('.album-cover-text');
+    centerElement('.photo-content');
 
     $(window).on('resize', function() {
         
@@ -49,12 +51,12 @@
     })
 ==========================================================*/
 
-    centerElement('.album-cover-text');
+    // $('.photo-detail').css('right', -$(window).width());
 
-    centerElement('#pjax-container');
-    $('.photo-detail').css('right', -$(window).width())
     $('.thumbnail img').on('click', function() {
-        $('.photo-detail').animate({right: '0px'}, 1000)
+        // $('.photo-detail').animate({right: '0px'}, 500)
+        $('.photo-background').css('visibility', 'visible');
+        $('.photo-detail').css('visibility', 'visible');
     })
 
     $(document).pjax('a[data-pjax]', '#pjax-container')
