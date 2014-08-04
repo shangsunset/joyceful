@@ -299,7 +299,7 @@ html, body {
 
 }
 
-.photo-thumbnails {
+.gallery-container {
   z-index:10;
   position:relative;
   display:inline-block;
@@ -307,9 +307,15 @@ html, body {
   padding:50px;
 }
 
-.photo-thumbnails img {
-  width:25%;
-  height:25%;
+.gallery>li {
+  display: inline-block;
+}
+
+
+.gallery img {
+  width:300px;
+  height:auto;
+  margin: 0;
 }
 .album-cover-text {
   text-transform:uppercase;

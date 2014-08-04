@@ -15,7 +15,7 @@
     </ul>
 
 </div>
---!>
+-->
 
 <div class="photo-detail">
     <div class="photo-background"></div>
@@ -23,13 +23,13 @@
 </div>
 
 
-<div class="photo-thumbnails">
+<div class="gallery-container">
     {% if photos %}
-            <div class="row">
+            <ul class="gallery">
             {% for photo in photos %}
-                        <a data-pjax href="{{photo.slug}}"><img src="../../media/{{ photo.image }}"></a>
+                <li><a data-pjax href="{{photo.slug}}"><img src="../../media/{{ photo.image }}"></a></li>
             {% endfor %}
-            </div>
+            </ul>
     {% else %}
         <strong>there is no photos or there is problem loading photos</strong>
     {% endif %}
