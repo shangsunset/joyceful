@@ -17,22 +17,36 @@
 </div>
 -->
 
-<div class="photo-detail">
-    <div class="photo-background"></div>
-    <div id="pjax-container"></div>
-</div>
+
+{# <div class="gallery-container"> #}
+{#     {% if photos %} #}
+{#             <ul class="gallery"> #}
+{#             {% for photo in photos %} #}
+{#                 <li><a data-pjax href="{{photo.slug}}"><img src="../../media/{{ photo.image }}"></a></li> #}
+{#             {% endfor %} #}
+{#             </ul> #}
+{#     {% else %} #}
+{#         <strong>there is no photos or there is problem loading photos</strong> #}
+{#     {% endif %} #}
+{# </div> #}
 
 
-<div class="gallery-container">
-    {% if photos %}
-            <ul class="gallery">
-            {% for photo in photos %}
-                <li><a data-pjax href="{{photo.slug}}"><img src="../../media/{{ photo.image }}"></a></li>
-            {% endfor %}
-            </ul>
-    {% else %}
-        <strong>there is no photos or there is problem loading photos</strong>
-    {% endif %}
+<div class="gamma-container gamma-loading" id="gamma-container">
+
+    <ul class="gamma-gallery">
+
+        {% for photo in photos %}
+        <li>
+        <div data-alt="img03" data-description="<h3>{{photo.caption}}</h3>" data-max-width="1800" data-max-height="1350">
+                <div data-src="../../media/{{ photo.image }}" data-min-width="200"></div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="gamma-overlay"></div>
+
+
 </div>
 
 {% endblock %}
