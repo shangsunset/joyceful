@@ -123,9 +123,11 @@ html, body {
     /* -webkit-transform: translate3d(0, 0, 0); */
     /* transform: translate3d(0, 0, 0); */
 
-    -webkit-transition: -webkit-transform .33s cubic-bezier(1,0,.61,.15);
-    -moz-transition: -moz-transform .33s cubic-bezier(1,0,.61,.15);
-    transition: -webkit-transform .33s cubic-bezier(1,0,.61,.15);
+    -webkit-transition: 300ms linear all;
+    transition: 300ms linear all;
+    /* -webkit-transition: -webkit-transform .33s cubic-bezier(1,0,.61,.15); */
+    /* -moz-transition: -moz-transform .33s cubic-bezier(1,0,.61,.15); */
+    /* transition: -webkit-transform .33s cubic-bezier(1,0,.61,.15); */
 
     /* -webkit-backface-visibility: hidden; */
     /* backface-visibility: hidden; */

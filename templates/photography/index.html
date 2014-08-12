@@ -9,42 +9,15 @@
 
 	<!-- Wrapper for slides -->
 	<div id="myCarousel" class="carousel-inner layer" data-depth="0.10">
-		<div class="item active">
-		  <div class="fill" style="background-image:url('../static/img/1.jpg'); background-size: cover;">
+        {% for album in albums %}
+		<div class="item">
+            <div class="fill" style="background-image:url('../media/{{album.album_cover}}'); background-size: cover;">
 		    <div class="container">
 				
 		    </div>
 		  </div>
 		</div>
-		<div class="item">
-		  <div class="fill" style="background-image:url('../static/img/3.jpg'); background-size: cover;">
-		    <div class="container">
-		      
-		    </div>
-		  </div>
-		</div>
-
-		<div class="item">
-		  <div class="fill" style="background-image:url('../static/img/7.jpg'); background-size: cover;">
-		    <div class="container">
-		      
-		    </div>
-		  </div>
-		</div>
-		<div class="item">
-		  <div class="fill" style="background-image:url('../static/img/2.jpg'); background-size: cover;">
-		    <div class="container">
-		      
-		    </div>
-		  </div>
-		</div>
-		<div class="item">
-		  <div class="fill" style="background-image:url('../static/img/3.jpg'); background-size: cover;">
-		    <div class="container">
-		      
-		    </div>
-		  </div>
-		</div>
+        {% endfor %}
 		...
 	</div>
 
@@ -59,17 +32,27 @@
 
 	<!-- Controls -->
 
-	<a class="left carousel-control layer " href="#scene" role="button" data-slide="prev" data-depth="0.40">
-	<span class="glyphicon glyphicon-chevron-left"></span>
-	</a>
-	<a class="right carousel-control layer" href="#scene" role="button" data-slide="next" data-depth="0.40">
-	<span class="glyphicon glyphicon-chevron-right"></span>
-	</a>
+	{# <a class="left carousel-control layer " href="#scene" role="button" data-slide="prev" data-depth="0.40"> #}
+	{# <span class="glyphicon glyphicon-chevron-left"></span> #}
+	{# </a> #}
+	{# <a class="right carousel-control layer" href="#scene" role="button" data-slide="next" data-depth="0.40"> #}
+	{# <span class="glyphicon glyphicon-chevron-right"></span> #}
+	{# </a> #}
 
 
+    <section>
+        <nav class="nav-circlepop">
+            <a class="prev" href="#scene" data-slide="prev">
+                <span class="icon-wrap"></span>
+            </a>
+            <a class="next" href="#scene" data-slide="next">
+                <span class="icon-wrap"></span>
+            </a>
+        </nav>
+    </section>
 </div>
 
-<nav id="bt-menu" class="bt-menu">
+<div id="bt-menu" class="bt-menu">
 <a href="#" class="bt-menu-trigger"><span>Menu</span> </a>
     <ul>
         <li><a href="#" class="bt-icon icon-user-outline">About</a></li>
@@ -79,6 +62,7 @@
         <li><a href="#" class="bt-icon icon-star">Clients</a></li>
         <li><a href="#" class="bt-icon icon-bubble">Contact</a></li>
     </ul>
-</nav>
+</div>
+
 {% endblock %}
 

@@ -7,9 +7,11 @@ from django.template.response import TemplateResponse
 
 def index(request):
     context = RequestContext(request)
+    albums = Album.objects.all()
+    context_dict = {'albums': albums}
+    context_dict['range'] = range(3)
 
-
-    return render_to_response('photography/index.html', context)
+    return render_to_response('photography/index.html', context_dict, context)
 
 def gallery(request):
     context = RequestContext(request)
