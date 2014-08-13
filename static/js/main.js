@@ -75,6 +75,34 @@ var GammaSettings = {
 Gamma.init( GammaSettings );
 
 
+// $('.trigger-overlay').click(function() {
+//     $('.overlay').css('z-index', 15)
+// })
+    $('.contact-form').on('submit', function() {
+        $.ajax({
+            data: $(this).serialize(),
+            type: $(this).attr('method'), // GET or POST
+            dataType: 'json',
+            url: $(this).attr('action'), // the file to call
+            success: function(response) {
+                $('.overlay').fadeIn(1000, function() {
+                    // $(this).css('z-index', 0)
+                })
+                $('.alert-success').css({'display': 'block'});
+                $('.alert-info').css({'display': 'none'});
+                $('.form-control').val('');
+
+
+            },
+            error: function(response) {
+                $('.alert-danger').css({'display': 'block'});
+                $('.alert-info').css({'display': 'none'});
+            }
+        });
+        return false;
+    });
+
+
 })();
 
 
@@ -124,3 +152,4 @@ function centerElement(target) {
 
     element.css({left: elementPosLeft, top: elementPosTop})
 }
+

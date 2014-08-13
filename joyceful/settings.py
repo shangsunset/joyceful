@@ -115,3 +115,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'joyceful.context_processors.albums' ,
 
 )
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+

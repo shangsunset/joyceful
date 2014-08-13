@@ -28,7 +28,7 @@ body {
     font-weight: 300;
     font-size: 15px;
     color: #333;
-    -webkit-font-smoothing: antialiased;
+    /* -webkit-font-smoothing: antialiased; */
     overflow-y: scroll;
     overflow-x: hidden;
 }

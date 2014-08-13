@@ -3,7 +3,10 @@ from photography.models import Album, Photo
 from django.template import RequestContext
 from djpjax import pjax
 from django.template.response import TemplateResponse
-
+from photography.forms import ContactForm
+import json
+from django.http import HttpResponse
+from django.core.mail import send_mail, BadHeaderError
 
 def index(request):
     context = RequestContext(request)
@@ -48,3 +51,33 @@ def photo_detail(request, album_name, slug):
         pass
 
     return render_to_response('photography/photo_detail.html', context_dict, context)
+
+
+def contact(request):
+    context = RequestContext(request)
+
+    if request.method == 'POST':
+        data = {}
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # name = form.cleaned_data['name']
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+            from_email = form.cleaned_data['email']
+
+            recipients = ['shangsunset@gmail.com']
+
+            try:
+                send_mail(subject, message, from_email, recipients)
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            data['success'] = 'Message Sent!'
+
+        else:
+            data['error'] = 'Something is wrong'
+            print form.errors
+
+        return HttpResponse(json.dumps(data), content_type = "application/json")
+    # else:
+    #     form = ContactForm()
+    # return render_to_response('photography/contact_form.html', {'form': form}, context)
