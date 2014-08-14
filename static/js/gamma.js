@@ -1134,8 +1134,8 @@ var Gamma = (function() {
 				horizontal : 0
 			};
 			_toggleControl( Gamma.svclose, 'off' );
-			_toggleControl( Gamma.svnavprev, 'off', { left : -40 } );
-			_toggleControl( Gamma.svnavnext, 'off', { right : -40 } );
+			_toggleControl( $('.prev'), 'off', { left : -200 } );
+			_toggleControl( $('.next'), 'off', { right : -200 } );
 			
 			_svResizeImage( function() {
 
@@ -1196,8 +1196,8 @@ var Gamma = (function() {
 				Gamma.svplay.removeClass( 'gamma-btn-sspause' );
 				Gamma.svMargins = Gamma.settings.svMarginsVH;
 				_toggleControl( Gamma.svclose, 'on' );
-				_toggleControl( Gamma.svnavprev, 'on', { left : 20 } );
-				_toggleControl( Gamma.svnavnext, 'on', { right : 20 } );
+				_toggleControl( $('.prev'), 'on', { left : 20 } );
+				_toggleControl( $('.next'), 'on', { right : 20 } );
 				_svResizeImage( function() {
 
 					Gamma.isAnimating = false;

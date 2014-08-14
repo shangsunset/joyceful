@@ -229,6 +229,7 @@ html, body {
     letter-spacing: 1px;
     display: block;
     color:#fff;
+    cursor: pointer;
     float: left;
 }
 .top-menu-bar a:hover{

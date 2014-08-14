@@ -1,9 +1,12 @@
 (function(){
 
+
     $(window).on('load', function() {
         $('.item').first().addClass('active');
-    })
-//menu toggle
+    });
+
+
+    //menu toggle
     $('.toggle-nav').click(function() {
         // Calling a function in case you want to expand upon this.
         toggleNav();
@@ -72,13 +75,12 @@ var GammaSettings = {
         } ]
 };
 
-Gamma.init( GammaSettings );
+    Gamma.init( GammaSettings );
 
 
-// $('.trigger-overlay').click(function() {
-//     $('.overlay').css('z-index', 15)
-// })
+
     $('.contact-form').on('submit', function() {
+
         $.ajax({
             data: $(this).serialize(),
             type: $(this).attr('method'), // GET or POST

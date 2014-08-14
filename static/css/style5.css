@@ -5,8 +5,8 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(153,204,51,0.9);
-  /* background: transparent; */
+	/* background: rgba(153,204,51,0.9); */
+  background: transparent;
 }
 
 /* Overlay closing cross */
@@ -62,8 +62,8 @@
 	opacity: 0;
 	-webkit-transform: scale(0.7);
 	transform: scale(0.7);
-	-webkit-transition: -webkit-transform 1s, opacity 1s, visibility 0s 1s;
-	transition: transform 1s, opacity 1s, visibility 0s 1s;
+	-webkit-transition: -webkit-transform 0,5s, opacity 0.5s, visibility 0s 0.5s;
+	transition: transform 0.5s, opacity 0.5s, visibility 0s 0.5s;
 
 	
 }
