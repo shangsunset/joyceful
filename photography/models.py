@@ -1,5 +1,4 @@
 from django.db import models
-from sorl.thumbnail import ImageField
 
 class Album(models.Model):
     name = models.CharField(max_length=120, null=False, blank=True)
@@ -22,7 +21,7 @@ class Album(models.Model):
 class Photo(models.Model):
     album = models.ForeignKey(Album, related_name='photos')
     title = models.CharField(max_length=120, null=False, blank=True)
-    image = ImageField(upload_to='photos')
+    image = models.ImageField(upload_to='photos')
     caption = models.CharField(max_length=400, null=True, blank=True)
     created = models.DateField('Date Ceated')
     slug = models.SlugField(max_length=40, unique=True)

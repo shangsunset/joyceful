@@ -59,8 +59,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'photography',
-    'sorl.thumbnail',
-    'rest_framework',
+    # 'sorl.thumbnail',
+    # 'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
