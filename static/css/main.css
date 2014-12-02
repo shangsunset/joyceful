@@ -105,7 +105,7 @@ html, body {
 #site-wrapper {
   position: relative;
   width: 100%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   height: 100%; 
 }
 #site-canvas {
@@ -374,6 +374,31 @@ html, body {
 .alert-success, .alert-danger {
   display:none;
 }
+
+
+#album-covers-index {
+  /* margin: 150px auto; */
+  padding: 0 150px;
+}
+
+.single-album-cover {
+  width: 25%;
+  display: inline-block;
+}
+
+/* #anchor-arrow { */
+/*   position: absolute; */
+/*   bottom: 10%; */
+/*   left: 50%; */
+/* } */
+
+
+
+
+
+
+
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

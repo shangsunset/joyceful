@@ -6,7 +6,17 @@
     });
 
 
-    //menu toggle
+var container = document.querySelector('#album-covers-index');
+    var msnry;
+    // initialize Masonry after all images have loaded
+    imagesLoaded( container, function() {
+      msnry = new Masonry( container, {
+        itemSelector: '.single-album-cover'
+        // columWidth: '25%'
+      });
+    });
+
+
     $('.toggle-nav').click(function() {
         // Calling a function in case you want to expand upon this.
         toggleNav();

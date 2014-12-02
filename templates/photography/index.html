@@ -13,14 +13,21 @@
             <div class="fill" style="background-image:url('../media/{{album.album_cover}}'); background-size: cover;">
 		    <div class="container">
 				
-		    </div>
+      </div>
 		  </div>
 		</div>
         {% endfor %}
 		...
 	</div>
 
-
+  <a id="anchor-arrow" href="#album-covers-index" class="animate rand">
+  <div id="scrolldown">
+          <p><font><font>CLICK</font></font></p>
+          <div class="mouse">
+            <span><p><font><font>↓</font></font></p></span>
+          </div>
+  </div>
+  </a>
 
 	<!-- Indicators -->
  	{# <ol class="carousel-indicators"> #}
@@ -49,6 +56,13 @@
             </a>
         </nav>
     </section>
+</div>
+
+
+<div id="album-covers-index">
+  {% for album in albums %}
+  <a href="/gallery/{{album.get_absolute_url}}"><img class="single-album-cover" src="../media/{{album.album_cover}}"></a>
+  {% endfor %}
 </div>
 
 {# <div id="bt-menu" class="bt-menu"> #}

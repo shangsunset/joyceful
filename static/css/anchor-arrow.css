@@ -1,0 +1,64 @@
+#scrolldown {
+width: 100px;
+height: 70px;
+position: absolute;
+left: 46%;
+bottom: 10px;
+z-index: 100;
+/* margin-left: -13px; */
+text-align: center;
+}
+
+#scrolldown p {
+font: 700 0.7em/1em 'Josefin Sans', sans-serif;
+color: #ff46af;
+-webkit-animation-duration: 2s;
+animation-duration: 2s;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;
+-webkit-animation-iteration-count: infinite;
+animation-iteration-count: infinite;
+-webkit-animation-name: scroll;
+animation-name: scroll;
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px); } }
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px); } }
+.mouse {
+display: block;
+margin: 0 auto;
+width: 26px;
+height: 46px;
+border-radius: 13px;
+/* border: 2px solid #ff46af; */
+position: absolute;
+left: 50%;
+margin: 10px 0 0 -13px;
+}
+
+.mouse span {
+font-size: 1.5em;
+display: block;
+margin: 6px auto;
+}
