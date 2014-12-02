@@ -61,7 +61,7 @@
 
 <div id="album-covers-index">
   {% for album in albums %}
-  <a href="/gallery/{{album.get_absolute_url}}"><img class="single-album-cover" src="../media/{{album.album_cover}}"></a>
+  <a class="single-album-cover" href="/gallery/{{album.get_absolute_url}}"><img src="../media/{{album.album_cover}}"></a>
   {% endfor %}
 </div>
 

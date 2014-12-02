@@ -6,15 +6,6 @@
     });
 
 
-var container = document.querySelector('#album-covers-index');
-    var msnry;
-    // initialize Masonry after all images have loaded
-    imagesLoaded( container, function() {
-      msnry = new Masonry( container, {
-        itemSelector: '.single-album-cover'
-        // columWidth: '25%'
-      });
-    });
 
 
     $('.toggle-nav').click(function() {
@@ -65,27 +56,27 @@ var container = document.querySelector('#album-covers-index');
     })
 ==========================================================*/
 
-var GammaSettings = {
-        // order is important!
-        viewport : [ {
-            width : 1200,
-            columns : 5
-        }, {
-            width : 900,
-            columns : 4
-        }, {
-            width : 500,
-            columns : 3
-        }, { 
-            width : 320,
-            columns : 2
-        }, { 
-            width : 0,
-            columns : 2
-        } ]
-};
-
-    Gamma.init( GammaSettings );
+    // var gammaSettings = {
+    //         // order is important!
+    //         viewport : [ {
+    //             width : 1200,
+    //             columns : 5
+    //         }, {
+    //             width : 900,
+    //             columns : 4
+    //         }, {
+    //             width : 500,
+    //             columns : 3
+    //         }, { 
+    //             width : 320,
+    //             columns : 2
+    //         }, { 
+    //             width : 0,
+    //             columns : 2
+    //         } ]
+    // };
+    //
+    // Gamma.init( gammaSettings );
 
 
 
@@ -112,6 +103,17 @@ var GammaSettings = {
             }
         });
         return false;
+    });
+
+
+    var container = document.querySelector('#album-covers-index');
+    var msnry;
+    // initialize Masonry after all images have loaded
+    imagesLoaded( container, function() {
+      msnry = new Masonry( container, {
+        itemSelector: '.single-album-cover'
+        // columWidth: '25%'
+      });
     });
 
 

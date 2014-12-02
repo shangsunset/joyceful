@@ -6,48 +6,68 @@
     <div class="album-cover-text"><span>{{album.name}}</span></div>
 </div>
 
-<!--
-<div id="photo-filters">
-    <ul>
-        {% for album in albums %}
-        <li><a href="/gallery/{{album.get_absolute_url}}">{{album.name}}</a></li>
-        {% endfor %}
-    </ul>
-
-</div>
--->
 
 
-{# <div class="gallery-container"> #}
-{#     {% if photos %} #}
-{#             <ul class="gallery"> #}
-{#             {% for photo in photos %} #}
-{#                 <li><a data-pjax href="{{photo.slug}}"><img src="../../media/{{ photo.image }}"></a></li> #}
-{#             {% endfor %} #}
-{#             </ul> #}
-{#     {% else %} #}
-{#         <strong>there is no photos or there is problem loading photos</strong> #}
-{#     {% endif %} #}
+
+{# <div class="gamma-container gamma-loading" id="gamma-container"> #}
+{#  #}
+{#     <ul class="gamma-gallery"> #}
+{#  #}
+{#         {% for photo in photos %} #}
+{#         <li> #}
+{#         <div data-alt="{{photo.caption}}" data-description="<h3>{{photo.caption}}</h3>" data-max-width="1800" data-max-height="1350"> #}
+{#                 <div data-src="../../media/{{ photo.image }}" data-min-width="200"></div> #}
+{#             </div> #}
+{#         </li> #}
+{#         {% endfor %} #}
+{#     </ul> #}
+{#  #}
+{#     <div class="gamma-overlay"></div> #}
+{#  #}
+{#  #}
 {# </div> #}
 
 
-<div class="gamma-container gamma-loading" id="gamma-container">
-
-    <ul class="gamma-gallery">
-
-        {% for photo in photos %}
-        <li>
-        <div data-alt="{{photo.caption}}" data-description="<h3>{{photo.caption}}</h3>" data-max-width="1800" data-max-height="1350">
-                <div data-src="../../media/{{ photo.image }}" data-min-width="200"></div>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
-
-    <div class="gamma-overlay"></div>
+<div id="grid-gallery" class="grid-gallery">
+				<section class="grid-wrap">
+					<ul class="grid">
+						<li class="grid-sizer"></li><!-- for Masonry column width -->
+            {% for photo in photos %}
+						<li>
+							<figure>
+								<img src="../../media/{{ photo.image }}"/>
+								<figcaption><h3>Letterpress asymmetrical</h3><p>Chillwave hoodie ea gentrify aute sriracha consequat.</p></figcaption>
+							</figure>
+						</li>
 
 
-</div>
+          {% endfor %}
+					</ul>
+				</section><!-- // grid-wrap -->
+				<section class="slideshow">
+					<ul>
+            
+            {% for photo in photos %}
+						<li>
+							<figure>
+								<figcaption>
+									<h3>Vice velit chia</h3>
+									<p>Chillwave Echo Park Etsy organic Cosby sweater seitan authentic pour-over. Occupy wolf selvage bespoke tattooed, cred sustainable Odd Future hashtag butcher.</p>
+								</figcaption>
+                <img src="../../media/{{ photo.image }}"/>
+							</figure>
+						</li>
+
+            {% endfor %}
+					</ul>
+					<nav>
+						<span class="icon nav-prev"></span>
+						<span class="icon nav-next"></span>
+						<span class="icon nav-close"></span>
+					</nav>
+					<div class="info-keys icon">Navigate with arrow keys</div>
+				</section><!-- // slideshow -->
+			</div><!-- // grid-gallery -->
 
 {% endblock %}
 
