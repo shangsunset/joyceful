@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
 <div id="scene" class="carousel slide scene" data-ride="carousel">
 
 
@@ -11,9 +10,9 @@
         {% for album in albums %}
 		<div class="item">
             <div class="fill" style="background-image:url('../media/{{album.album_cover}}'); background-size: cover;">
-		    <div class="container">
-				
-      </div>
+		  {#   <div class="container"> #}
+			{# 	 #}
+      {# </div> #}
 		  </div>
 		</div>
         {% endfor %}
@@ -21,29 +20,13 @@
 	</div>
 
   <a id="anchor-arrow" href="#album-covers-index" class="animate rand">
-  <div id="scrolldown">
-          <p><font><font>CLICK</font></font></p>
-          <div class="mouse">
-            <span><p><font><font>↓</font></font></p></span>
-          </div>
-  </div>
+    <div id="scrolldown">
+            <p><font><font>CLICK</font></font></p>
+            <div class="mouse">
+              <span><p><font><font>↓</font></font></p></span>
+            </div>
+    </div>
   </a>
-
-	<!-- Indicators -->
- 	{# <ol class="carousel-indicators"> #}
-	{# <li data-target="#scene" data-slide-to="0" class="active"></li> #}
-	{# <li data-target="#scene" data-slide-to="1"></li> #}
-	{# <li data-target="#scene" data-slide-to="2"></li> #}
-	{# </ol> #}
-
-	<!-- Controls -->
-
-	{# <a class="left carousel-control layer " href="#scene" role="button" data-slide="prev" data-depth="0.40"> #}
-	{# <span class="glyphicon glyphicon-chevron-left"></span> #}
-	{# </a> #}
-	{# <a class="right carousel-control layer" href="#scene" role="button" data-slide="next" data-depth="0.40"> #}
-	{# <span class="glyphicon glyphicon-chevron-right"></span> #}
-	{# </a> #}
 
 
     <section>
@@ -56,6 +39,12 @@
             </a>
         </nav>
     </section>
+</div><!-- scene -->
+
+<div class="block">
+  <div class="block-title">
+    <h2 class="test">My Albums.</h2>
+  </div>
 </div>
 
 

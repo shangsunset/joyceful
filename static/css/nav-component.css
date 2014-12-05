@@ -6,7 +6,7 @@
 	overflow: hidden;
 }
 
-nav a {
+.nav-circlepop a {
 	position: absolute;
 	top: 50%;
 	display: block;

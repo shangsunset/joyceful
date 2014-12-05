@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="{% static 'css/nav-component.css' %}">
         <link rel="stylesheet" href="{% static 'css/anchor-arrow.css' %}">
         <link rel="stylesheet" href="{% static 'css/component.css' %}">
+        <link rel="stylesheet" href="{% static 'css/offCanvasMenu.css' %}">
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
         <script src="{% static 'js/modernizr.custom.js' %}"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -34,29 +35,40 @@
     <![endif]-->
 
 <div id="site-wrapper">
-            <div id="site-menu">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    {% for album in albums %}
-                    <li><a href="/gallery/{{album.get_absolute_url}}">{{album.name}}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-    <div id="site-canvas" class="container fill">
 
 
+    <div class="menu-wrap">
+      <nav class="menu">
+        <div class="icon-list">
+          {% for album in albums %}
+          <a href="/gallery/{{album.get_absolute_url}}"><span>{{album.name}}</span></a>
+          {% endfor %}
+          {# <a href="#"><i></i><span>Favorites</span></a> #}
+          {# <a href="#"><i></i><span>Alerts</span></a> #}
+          {# <a href="#"><i></i><span>Messages</span></a> #}
+          {# <a href="#"><i></i><span>Comments</span></a> #}
+          {# <a href="#"><i></i><span>Analytics</span></a> #}
+          {# <a href="#"><i></i><span>Reading List</span></a> #}
+        </div>
+      </nav>
+      <button class="close-button" id="close-button">Close Menu</button>
+    </div>
+
+    <div class="content-wrap" class="container fill">
+      <div class="site-canvas">
             <div class="site-header">
-                <div class="top-menu-bar">
-                    <a href="/">
+                <nav class="top-menu-bar">
+                    <a id="logo" href="/">
                         <strong>Joyceful</strong>
                     </a>
                     <span class="right">
-                        <a href="#"><i class="fa fa-instagram fa-lg"></i></a>
-                        <a id="trigger-overlay"><i class="fa fa-envelope fa-lg"></i></a>
-                        <a class="toggle-nav"><i class="fa fa-angle-double-left fa-lg menu-icon"></i> menu</a>
+                        {# <a href="#"><i class="fa fa-instagram fa-lg"></i></a> #}
+                        {# <a id="trigger-overlay"><i class="fa fa-envelope fa-lg"></i></a> #}
+                        {# <a class="toggle-nav"><i class="fa fa-angle-double-left fa-lg menu-icon"></i> menu</a> #}
+                        <button class="menu-button" id="open-button">click</button>
                     </span>
                     <div class="clr"></div>
-                </div>
+                </nav>
                 <!-- <header>
                     <p class="header-section">
 
@@ -64,10 +76,16 @@
                 </header> -->
             </div>
 
-            {% block content %}{% endblock %}
+      </div><!-- content -->
+      {% block content %}{% endblock %}
+
+
     </div>
 
 
+    <footer class="site-footer">
+      this is footer
+    </footer>
 
     {# <div class="overlay overlay-scale"> #}
         <div id="loginModal" class="modal show overlay overlay-scale" tabindex="-1" role="dialog" aria-hidden="true">
@@ -125,7 +143,7 @@
     {# <script src="{% static 'js/classie.js' %}"></script> #}
 
 
-    <script src="{% static 'js/parallax.js' %}"></script>
+    {# <script src="{% static 'js/parallax.js' %}"></script> #}
 
     <!-- gamma gallery -->
     {# <script src="{% static 'js/jquery.masonry.min.js' %}"></script> #}
@@ -146,13 +164,15 @@
     <script src="{% static 'js/cbpGridGallery.js' %}"></script>
 
 
+
+    <script src="{% static 'js/offCanvasMenu.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
 
 
     <script>
       new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
-      var scene = document.getElementById('scene');
-      var parallax = new Parallax(scene);
+      {# var scene = document.getElementById('scene'); #}
+      {# var parallax = new Parallax(scene); #}
     </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

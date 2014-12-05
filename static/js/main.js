@@ -8,21 +8,21 @@
 
 
 
-    $('.toggle-nav').click(function() {
-        // Calling a function in case you want to expand upon this.
-        toggleNav();
-    $('#site-menu').css('visibility', 'visible')
+    // $('.toggle-nav').click(function() {
+    //     // Calling a function in case you want to expand upon this.
+    //     toggleNav();
+    // $('#site-menu').css('visibility', 'visible')
+    //
+    // });
 
-    });
-
-    $(document).keyup(function(e) {
-        if (e.keyCode == 27) {
-            if ($('#site-wrapper').hasClass('show-nav')) {
-                // Assuming you used the function I made from the demo
-                toggleNav();
-            }
-        } 
-    });
+    // $(document).keyup(function(e) {
+    //     if (e.keyCode == 27) {
+    //         if ($('#site-wrapper').hasClass('show-nav')) {
+    //             // Assuming you used the function I made from the demo
+    //             toggleNav();
+    //         }
+    //     } 
+    // });
 
 
     centerElement('.album-cover-text');
@@ -30,7 +30,7 @@
     $(window).on('resize', function() {
         
         centerElement('.album-cover-text');
-    })
+    });
 
 
 /*=====================================================
@@ -90,7 +90,7 @@
             success: function(response) {
                 $('.overlay').fadeIn(1000, function() {
                     // $(this).css('z-index', 0)
-                })
+                });
                 $('.alert-success').css({'display': 'block'});
                 $('.alert-info').css({'display': 'none'});
                 $('.form-control').val('');
@@ -158,12 +158,13 @@ function centerElement(target) {
     var element = $(target);
     var elementHeight = element.height();
     var windowHeight = $(window).height();
-    var elementPosTop = windowHeight/2-elementHeight/2 
+    var elementPosTop = windowHeight/2-elementHeight/2;
 
     var elementWidth = element.width();
     var windowWidth = $(window).width();
-    var elementPosLeft = windowWidth/2-elementWidth/2 
+    var elementPosLeft = windowWidth/2-elementWidth/2;
 
-    element.css({left: elementPosLeft, top: elementPosTop})
+    // element.css({left: elementPosLeft, top: elementPosTop})
+    element.css({left: elementPosLeft});
 }
 

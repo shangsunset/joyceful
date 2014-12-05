@@ -23,7 +23,6 @@ def gallery(request):
     context_dict = {'photos': photos}
     return render_to_response('photography/gallery.html', context_dict, context)
 
-@pjax()
 def photos_by_location(request, slug):
     context = RequestContext(request)
     album_name = slug.replace('-', ' ')
@@ -36,6 +35,7 @@ def photos_by_location(request, slug):
         context_dict['photos'] = photos
     except Album.DoesNotExist:
         print 'damn'
+        print context_dict
         pass
 
     return TemplateResponse(request, 'photography/photos_by_location.html', context_dict)

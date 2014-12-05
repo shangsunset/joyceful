@@ -2,30 +2,14 @@
 
 {% block content %}
 
-<div id="album-cover" style="background-image:url('../../media/{{album.album_cover}}')">
-    <div class="album-cover-text"><span>{{album.name}}</span></div>
-</div>
 
-
-
-
-{# <div class="gamma-container gamma-loading" id="gamma-container"> #}
-{#  #}
-{#     <ul class="gamma-gallery"> #}
-{#  #}
-{#         {% for photo in photos %} #}
-{#         <li> #}
-{#         <div data-alt="{{photo.caption}}" data-description="<h3>{{photo.caption}}</h3>" data-max-width="1800" data-max-height="1350"> #}
-{#                 <div data-src="../../media/{{ photo.image }}" data-min-width="200"></div> #}
-{#             </div> #}
-{#         </li> #}
-{#         {% endfor %} #}
-{#     </ul> #}
-{#  #}
-{#     <div class="gamma-overlay"></div> #}
-{#  #}
-{#  #}
-{# </div> #}
+<header>
+  <div class="container-cover">
+    {# <h2 class="album-cover-text"><span>{{album.name}}</span></h1> #}
+    <h1>{{album.name}}</h1>
+    <div id="album-cover" style="background-image:url('../../media/{{album.album_cover}}')"></div>
+  </div>
+</header>
 
 
 <div id="grid-gallery" class="grid-gallery">
@@ -36,7 +20,7 @@
 						<li>
 							<figure>
 								<img src="../../media/{{ photo.image }}"/>
-								<figcaption><h3>Letterpress asymmetrical</h3><p>Chillwave hoodie ea gentrify aute sriracha consequat.</p></figcaption>
+								{# <figcaption><h3>Letterpress asymmetrical</h3><p>Chillwave hoodie ea gentrify aute sriracha consequat.</p></figcaption> #}
 							</figure>
 						</li>
 

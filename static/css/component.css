@@ -113,11 +113,11 @@
 }
 
 .slideshow li {
-	width: 770px;
-	height: 650px;
+	width: 660px;
+	height: 560px;
 	position: absolute;
-	top: 44%;
-	left: 46%;
+	top: 50%;
+	left: 50%;
 	margin: -280px 0 0 -330px;
 	visibility: hidden;
 }
@@ -149,24 +149,17 @@
 	width: 100%;
 	height: 100%;
 	background: #fff;
-	border-left:20px solid #fff;
-	border-right:20px solid #fff;
-	border-top:10px solid #fff;
-	border-bottom:20px solid #fff;
+	border: 20px solid #fff;
 	overflow: hidden;
 }
 
 .slideshow figcaption {
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 }
 
 .slideshow figcaption h3 {
 	font-weight: 300;
-	font-size: 150%;
-}
-
-.slideshow figcaption p {
-  font-weight: 150;
+	font-size: 200%;
 }
 
 /* Navigation */
@@ -226,7 +219,7 @@ span.nav-close:before {
 /* Info on arrow key navigation */
 .info-keys {
 	position: fixed;
-	top: 5px;
+	top: 10px;
 	left: 10px;
 	width: 60px;
 	font-size: 8px;
