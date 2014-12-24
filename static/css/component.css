@@ -10,6 +10,10 @@
 } /* Made with http://icomoon.io/app */
 
 /* General style */
+.grid-gallery {
+  background: #f7f7f7;
+}
+
 .grid-gallery ul {
 	list-style: none;
 	margin: 0;

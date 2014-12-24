@@ -172,6 +172,7 @@ body,
     /* -webkit-box-shadow: 1px 0px 2px #000; */
     /* box-shadow: 1px 0px 2px #000; */
 }
+
 #logo {
     font-size: 23px;
     margin-top: 20px;
@@ -182,6 +183,7 @@ body,
     cursor: pointer;
     float: left;
 }
+
 .top-menu-bar a:hover{
     color: #000;
     text-decoration: none;

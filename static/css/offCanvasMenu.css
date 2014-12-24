@@ -1,11 +1,11 @@
-/* html,  */
-/* body,  */
-/* .container,  */
-/* .content-wrap { */
-/* 	overflow: hidden; */
-/* 	width: 100%; */
-/* 	height: 100%; */
-/* } */
+html, 
+body, 
+.container, 
+.content-wrap {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
 
 
 .menu-wrap a {
@@ -23,6 +23,7 @@
 /* } */
 
 .site-canvas {
+  /* height: 100%; */
 	position: relative;
 	/* background: #b4bad2; */
 }
@@ -50,7 +51,7 @@
   outline: none;
   top: 0px;
   right: 10px;
-	position: relative;
+	position: fixed;
 	z-index: 1000;
 	margin: 1em;
 	padding: 0;
@@ -223,7 +224,7 @@
 	transition-duration: 1s;
 }
 
-.show-menu .content::before {
+.show-menu .site-canvas::before {
 	opacity: 1;
 	-webkit-transition: opacity 0.8s;
 	transition: opacity 0.8s;

@@ -2,21 +2,27 @@
 
 {% block content %}
 
-<div id="scene" class="carousel slide scene" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 
 	<!-- Wrapper for slides -->
-	<div id="myCarousel" class="carousel-inner layer" data-depth="0.10">
-        {% for album in albums %}
+	<div class="carousel-inner layer" role="listbox">
+    {% for album in albums %}
 		<div class="item">
-            <div class="fill" style="background-image:url('../media/{{album.album_cover}}'); background-size: cover;">
-		  {#   <div class="container"> #}
-			{# 	 #}
-      {# </div> #}
-		  </div>
+      <div class="fill" style="background-image:url('../media/{{album.album_cover}}'); background-size: cover;"></div>
 		</div>
-        {% endfor %}
-		...
+    {% endfor %}
+
+    <section>
+        <nav class="nav-circlepop">
+            <a class="prev" href="#scene" data-slide="prev">
+                <span class="icon-wrap"></span>
+            </a>
+            <a class="next" href="#scene" data-slide="next">
+                <span class="icon-wrap"></span>
+            </a>
+        </nav>
+    </section>
 	</div>
 
   <a id="anchor-arrow" href="#album-covers-index" class="animate rand">
@@ -29,17 +35,7 @@
   </a>
 
 
-    <section>
-        <nav class="nav-circlepop">
-            <a class="prev" href="#scene" data-slide="prev">
-                <span class="icon-wrap"></span>
-            </a>
-            <a class="next" href="#scene" data-slide="next">
-                <span class="icon-wrap"></span>
-            </a>
-        </nav>
-    </section>
-</div><!-- scene -->
+</div><!-- carousel -->
 
 <div class="block">
   <div class="block-title">

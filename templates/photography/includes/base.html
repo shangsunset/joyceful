@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="{% static 'css/anchor-arrow.css' %}">
         <link rel="stylesheet" href="{% static 'css/component.css' %}">
         <link rel="stylesheet" href="{% static 'css/offCanvasMenu.css' %}">
+        <link rel="stylesheet" href="{% static 'css/site-footer.css' %}">
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
         <script src="{% static 'js/modernizr.custom.js' %}"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -56,36 +57,41 @@
 
     <div class="content-wrap" class="container fill">
       <div class="site-canvas">
-            <div class="site-header">
-                <nav class="top-menu-bar">
-                    <a id="logo" href="/">
-                        <strong>Joyceful</strong>
-                    </a>
-                    <span class="right">
-                        {# <a href="#"><i class="fa fa-instagram fa-lg"></i></a> #}
-                        {# <a id="trigger-overlay"><i class="fa fa-envelope fa-lg"></i></a> #}
-                        {# <a class="toggle-nav"><i class="fa fa-angle-double-left fa-lg menu-icon"></i> menu</a> #}
-                        <button class="menu-button" id="open-button">click</button>
-                    </span>
-                    <div class="clr"></div>
-                </nav>
-                <!-- <header>
-                    <p class="header-section">
+          <div class="site-header">
+              <nav class="top-menu-bar">
+                  <a id="logo" href="/">
+                      <strong>Joyceful</strong>
+                  </a>
+                  <span class="right">
+                      {# <a href="#"><i class="fa fa-instagram fa-lg"></i></a> #}
+                      {# <a id="trigger-overlay"><i class="fa fa-envelope fa-lg"></i></a> #}
+                      {# <a class="toggle-nav"><i class="fa fa-angle-double-left fa-lg menu-icon"></i> menu</a> #}
+                      <button class="menu-button" id="open-button">click</button>
+                  </span>
+                  <div class="clr"></div>
+              </nav>
+              <!-- <header>
+                  <p class="header-section">
 
-                    </p>
-                </header> -->
-            </div>
+                  </p>
+              </header> -->
+          </div>
+
+        {% block content %}{% endblock %}
 
       </div><!-- content -->
-      {% block content %}{% endblock %}
 
+
+      <footer class="footer">
+        <div class="container">
+          <p class="text-muted">Place sticky footer content here.</p>
+        </div>
+      </footer>
 
     </div>
 
 
-    <footer class="site-footer">
-      this is footer
-    </footer>
+
 
     {# <div class="overlay overlay-scale"> #}
         <div id="loginModal" class="modal show overlay overlay-scale" tabindex="-1" role="dialog" aria-hidden="true">
