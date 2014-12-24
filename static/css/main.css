@@ -207,7 +207,9 @@ body,
 }
 
 
-
+#scene {
+  width: 100%;
+}
 
 .carousel,.item,.active{height:100%;  overflow: hidden; }
 
