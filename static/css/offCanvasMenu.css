@@ -51,7 +51,7 @@ body,
   outline: none;
   top: 0px;
   right: 10px;
-	position: fixed;
+	position: absolute;
 	z-index: 1000;
 	margin: 1em;
 	padding: 0;

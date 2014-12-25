@@ -1,4 +1,9 @@
 from django.db import models
+from imagekit import ImageSpec, register
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
+from imagekit.utils import get_field_info
+
 
 class Album(models.Model):
     name = models.CharField(max_length=120, null=False, blank=True)
@@ -18,13 +23,33 @@ class Album(models.Model):
         ordering = ["-created"]
 
 
+
+class ImageThumbnail(ImageSpec):
+    format = 'JPEG'
+    options = {'quality': 60}
+
+    @property
+    def processors(self):
+        model, field_name = get_field_info(self.source)
+        return [ResizeToFill(model.image.width/10, model.image.height/10)]
+
+register.generator('photography:photo:image_thumbnail', ImageThumbnail)
+
+
 class Photo(models.Model):
+
+
     album = models.ForeignKey(Album, related_name='photos')
     title = models.CharField(max_length=120, null=False, blank=True)
     image = models.ImageField(upload_to='photos')
+    image_thumbnail = ImageSpecField(source='image',
+                                      id='photography:photo:image_thumbnail')
     caption = models.CharField(max_length=400, null=True, blank=True)
     created = models.DateField('Date Ceated')
     slug = models.SlugField(max_length=40, unique=True)
+
+
+
 
     def get_absolute_url(self):
         return "%s" % (self.slug)
@@ -35,3 +60,8 @@ class Photo(models.Model):
     class Meta:
         ordering = ['-created']
 
+
+# photo = Photo.objects.all()[0]
+# print photo.image.width
+# print photo.image_thumbnail.url    # > /media/CACHE/images/982d5af84cddddfd0fbf70892b4431e4.jpg
+# print photo.image_thumbnail.width  # > 100

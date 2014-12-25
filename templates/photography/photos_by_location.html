@@ -7,7 +7,8 @@
   <div class="container-cover">
     {# <h2 class="album-cover-text"><span>{{album.name}}</span></h1> #}
     <h1>{{album.name}}</h1>
-    <div id="album-cover" style="background-image:url('../../media/{{album.album_cover}}')"></div>
+    {# <div id="album-cover" style="background-image:url('../../media/{{album.album_cover}}')"></div> #}
+      <img src="../../media/{{album.album_cover}}" alt="" height="480px" width="auto"/>
   </div>
 </header>
 
@@ -19,7 +20,7 @@
             {% for photo in photos %}
 						<li>
 							<figure>
-								<img src="../../media/{{ photo.image }}"/>
+								<img src="../../{{ photo.image_thumbnail.url }}"/>
 								{# <figcaption><h3>Letterpress asymmetrical</h3><p>Chillwave hoodie ea gentrify aute sriracha consequat.</p></figcaption> #}
 							</figure>
 						</li>
