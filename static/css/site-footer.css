@@ -1,9 +1,9 @@
 /* Sticky footer styles
 -------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
+/* html { */
+/*   position: relative; */
+/*   min-height: 100%; */
+/* } */
 
 .footer {
   /* position: absolute; */
@@ -24,6 +24,6 @@ html {
 /*   max-width: 680px; */
 /*   padding: 0 15px; */
 /* } */
-.container .text-muted {
-  margin: 20px 0;
-}
+/* .container .text-muted { */
+/*   margin: 20px 0; */
+/* } */

@@ -14,7 +14,8 @@ class AlbumCoverThumbnail(ImageSpec):
     @property
     def processors(self):
         model, field_name = get_field_info(self.source)
-        return [ResizeToFill(model.album_cover.width/3, model.album_cover.height/3)]
+        # return [ResizeToFill(model.album_cover.width/3, model.album_cover.height/3)]
+        return [ResizeToFill(480, 360)]
 
 register.generator('photography:album:album_cover_thumbnail', AlbumCoverThumbnail)
 

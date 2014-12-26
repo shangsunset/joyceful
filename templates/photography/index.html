@@ -38,19 +38,31 @@
 
 </div><!-- carousel -->
 
-<div class="block">
-  <div class="block-title">
-    <h2 class="test">My Albums.</h2>
-  </div>
-</div>
+{# <div class="block"> #}
+{#   <div class="block-title"> #}
+{#     <h2 class="test">My Albums.</h2> #}
+{#   </div> #}
+{# </div> #}
 
 
-<div id="album-covers-index">
+{# <div id="album-covers-index"> #}
+{#   {% for album in albums %} #}
+{#   <a class="single-album-cover" href="/gallery/{{album.get_absolute_url}}"><img src="..{{album.album_cover_thumbnail.url}}"></a> #}
+{#   {% endfor %} #}
+{# </div> #}
+
+<div class="grid">
   {% for album in albums %}
-  <a class="single-album-cover" href="/gallery/{{album.get_absolute_url}}"><img src="..{{album.album_cover_thumbnail.url}}"></a>
+  <figure class="effect-milo">
+  <img src="..{{album.album_cover_thumbnail.url}}" alt=""/>
+    <figcaption>
+      <h2><span>{{album.name}}</span></h2>
+      <p>Steve was afraid of the Boogieman.</p>
+      <a href="/gallery/{{album.get_absolute_url}}">View more</a>
+    </figcaption>			
+  </figure>
   {% endfor %}
 </div>
-
 
 {% endblock %}
 
