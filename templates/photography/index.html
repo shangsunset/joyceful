@@ -47,21 +47,10 @@
 
 <div id="album-covers-index">
   {% for album in albums %}
-  <a class="single-album-cover" href="/gallery/{{album.get_absolute_url}}"><img src="../media/{{album.album_cover}}"></a>
+  <a class="single-album-cover" href="/gallery/{{album.get_absolute_url}}"><img src="..{{album.album_cover_thumbnail.url}}"></a>
   {% endfor %}
 </div>
 
-{# <div id="bt-menu" class="bt-menu"> #}
-{# <a href="#" class="bt-menu-trigger"><span>Menu</span> </a> #}
-{#     <ul> #}
-{#         <li><a href="#" class="bt-icon icon-user-outline">About</a></li> #}
-{#         <li><a href="#" class="bt-icon icon-sun">Skills</a></li> #}
-{#         <li><a href="#" class="bt-icon icon-windows">Work</a></li> #}
-{#         <li><a href="#" class="bt-icon icon-speaker">Blog</a></li> #}
-{#         <li><a href="#" class="bt-icon icon-star">Clients</a></li> #}
-{#         <li><a href="#" class="bt-icon icon-bubble">Contact</a></li> #}
-{#     </ul> #}
-{# </div> #}
 
 {% endblock %}
 

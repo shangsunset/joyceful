@@ -56,27 +56,6 @@
     })
 ==========================================================*/
 
-    // var gammaSettings = {
-    //         // order is important!
-    //         viewport : [ {
-    //             width : 1200,
-    //             columns : 5
-    //         }, {
-    //             width : 900,
-    //             columns : 4
-    //         }, {
-    //             width : 500,
-    //             columns : 3
-    //         }, { 
-    //             width : 320,
-    //             columns : 2
-    //         }, { 
-    //             width : 0,
-    //             columns : 2
-    //         } ]
-    // };
-    //
-    // Gamma.init( gammaSettings );
 
 
 
@@ -106,13 +85,24 @@
     });
 
 
-    var container = document.querySelector('#album-covers-index');
-    var msnry;
+    var $container = $('#album-covers-index');
     // initialize Masonry after all images have loaded
-    imagesLoaded( container, function() {
-      msnry = new Masonry( container, {
-        itemSelector: '.single-album-cover'
-        // columWidth: '25%'
+    $container.imagesLoaded(function() {
+      $container.masonry({
+        itemSelector: '.single-album-cover',
+        // columWidth: '5%',
+        isFitWidth: true
+      });
+    });
+
+
+    var $containerPswp = $('.pswp-gallery');
+    $containerPswp.imagesLoaded( function() {
+      $containerPswp.masonry({
+        itemSelector: '.pswp-gallery figure',
+        // columWidth: 500,
+        isFitWidth: true
+      
       });
     });
 
@@ -133,23 +123,6 @@ function toggleNav() {
 }
 
 
-function rgb2hex(rgb) {
-    if (/^#[0-9A-F]{6}$/i.test(rgb)) return rgb;
-
-    rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-    function hex(x) {
-        return ("0" + parseInt(x).toString(16)).slice(-2);
-    }
-    return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
-}
-
-function getContrastYIQ(hexcolor){
-    var r = parseInt(hexcolor.substr(0,2),16);
-    var g = parseInt(hexcolor.substr(2,2),16);
-    var b = parseInt(hexcolor.substr(4,2),16);
-    var yiq = ((r*299)+(g*587)+(b*114))/1000;
-    return (yiq >= 128) ? 'black' : 'white';
-}
 
 
 //postions of album cover text
