@@ -6,27 +6,30 @@
 <header>
   <div class="container-cover">
     {# <h2 class="album-cover-text"><span>{{album.name}}</span></h1> #}
-    <h1>{{album.name}}</h1>
+    <h1>{{album.name}}<span></span></h1>
     {# <div id="album-cover" style="background-image:url('../../media/{{album.album_cover}}')"></div> #}
       <img src="../../media/{{album.album_cover}}" alt="" height="480px" width="auto"/>
   </div>
 </header>
 
 
-<div id="pswp-container" class="container">
+<div id="pswp-container">
   <div class="pswp-gallery" itemscope itemtype="http://schema.org/ImageGallery">
 
       {% for photo in photos %}
-      <figure itemscope itemtype="http://schema.org/ImageObject">
-      <a href="../../media/{{photo.image}}" itemprop="contentUrl" data-size="{{photo.image.width}}x{{photo.image.height}}">
+      <figure class="effect-bubba" itemscope itemtype="http://schema.org/ImageObject">
             <img src="../../{{photo.image_thumbnail.url}}" itemprop="thumbnail" alt="Image description" />
-          </a>
-          <figcaption itemprop="caption description">Image caption</figcaption>
+          <figcaption itemprop="caption description">
+            <p>this is image caption</p>
+            <a href="../../media/{{photo.image}}" itemprop="contentUrl" data-size="{{photo.image.width}}x{{photo.image.height}}">
+            </a>
+          </figcaption>
       </figure>
       {% endfor %}
 
   </div>
 </div> 
+
 
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">

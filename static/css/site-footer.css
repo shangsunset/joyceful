@@ -10,20 +10,38 @@
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
+  height: 80px;
   background-color: #000;
 }
 
+footer .meta-links {
+  float: right;
+  margin-left: 40px;
+  color: #999;
+}
+
+.meta-links i {
+  margin-right: 5px;
+}
 
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 
-/* .container { */
-/*   width: auto; */
-/*   max-width: 680px; */
-/*   padding: 0 15px; */
-/* } */
-/* .container .text-muted { */
-/*   margin: 20px 0; */
-/* } */
+.container {
+  width: auto;
+  max-width: 1000px;
+  padding: 0 15px;
+}
+.container .text-muted {
+  font-family: Arial,sans-serif;
+  /* border-top: 1px solid #333; */
+  margin: 20px 0;
+  margin-top: 40px;
+  color: #999;
+  font-size: 11px;
+}
+
+.text-muted span {
+  padding-top: 36px;
+}

@@ -105,14 +105,6 @@ a:hover, a:visited, a:link, a:active
     text-decoration: none;
 }
 
-html, 
-body, 
-.container, 
-.content-wrap {
-	overflow: hidden;
-	width: 100%;
-	height: 100%;
-}
 
 body {
   /* background: #2f3238; */
@@ -121,6 +113,7 @@ body {
 .content-wrap {
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
+  background: #f7f7f7;
 }
 
 #site-wrapper {
@@ -167,12 +160,11 @@ body {
 }
 /* Header Style */
 .top-menu-bar{
-    font-family: Arial, sans-serif;
     line-height: 24px;
     font-size: 15px;
     padding-top:10px;
     width: 100%;
-    /* background: #000; */
+    /* background: #fff; */
     text-transform: uppercase;
     z-index: 999;
     position: absolute;
@@ -183,12 +175,13 @@ body {
 }
 
 #logo {
-    font-size: 23px;
-    margin-top: 20px;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 27px;
+    margin-top: 22px;
     padding: 0px 10px;
     letter-spacing: 1px;
     display: block;
-    color: #2f3238;
+    color: #81d8d0;
     cursor: pointer;
     float: left;
 }
@@ -218,6 +211,10 @@ body {
 
 #scene {
   width: 100%;
+  border-top: white 80px solid;
+  border-bottom: white 60px solid;
+  border-right: white 60px solid;
+  border-left: white 60px solid;
 }
 
 .carousel,.item,.active{height:100%;  overflow: hidden; }
@@ -290,7 +287,7 @@ header {
   background: #fff;
   text-align: center;
   height: auto;
-  padding: 92px 0 72px;
+  padding: 72px 0 72px;
   border-bottom: 10px solid #efefef;
   min-height: initial;
 }
@@ -302,7 +299,12 @@ header {
 
 
 .container-cover h1 {
-  text-transform: capitalize;:
+  text-transform: capitalize;
+  margin: 0;
+  font-weight: 800;
+  font-size: 6em;
+  line-height: 1.3;
+  font-family: 'Raleway', Arial, sans-serif;
 }
 
 .gallery-container {
@@ -414,7 +416,53 @@ header {
 
 .grid {
   overflow: hidden;
+  padding: 6em 0 4em;
 }
+
+
+
+.pswp-gallery figure p {
+	letter-spacing: 1px;
+	font-size: 64.5%;
+}
+
+.pswp-gallery figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 1;
+}
+
+.pswp-gallery figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.pswp-gallery figure figcaption::before,
+.pswp-gallery figure figcaption::after {
+	pointer-events: none;
+}
+
+.pswp-gallery figure figcaption,
+.pswp-gallery figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pswp-gallery figure.effect-bubba {
+  border-radius: 5px;
+  background: #81d8d3;
+}
+
+
 
 /* ==========================================================================
    Helper classes

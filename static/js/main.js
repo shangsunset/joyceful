@@ -1,60 +1,29 @@
-(function(){
+$(function(){
+
+    var lastScrollTop = 0;
+    $(window).on('scroll', function(){
+      console.log('haha');
+      var st = $(this).scrollTop();
+      if (st > lastScrollTop){
+        // downscroll code
+        console.log("down");
+      } else {
+        // upscroll code
+        console.log("up");
+      }
+      lastScrollTop = st;
+    });
+
 
 
     $(window).on('load', function() {
         $('.item').first().addClass('active');
     });
+        $('.carousel-indicators li').first().addClass('active');
 
-
-
-
-    // $('.toggle-nav').click(function() {
-    //     // Calling a function in case you want to expand upon this.
-    //     toggleNav();
-    // $('#site-menu').css('visibility', 'visible')
-    //
-    // });
-
-    // $(document).keyup(function(e) {
-    //     if (e.keyCode == 27) {
-    //         if ($('#site-wrapper').hasClass('show-nav')) {
-    //             // Assuming you used the function I made from the demo
-    //             toggleNav();
-    //         }
-    //     } 
-    // });
-
-
-    centerElement('.album-cover-text');
-
-    $(window).on('resize', function() {
-        
-        centerElement('.album-cover-text');
+    $('.carousel').carousel({
+      pause: "false"
     });
-
-
-/*=====================================================
-    var fromTop = $('#photo-filters').offset().top;
-    var filtersHeight = $('#photo-filters').height();
-
-    $(window).on('scroll', function() {
-        if ($(window).scrollTop() > fromTop) {
-            $('#photo-filters').addClass('fixed');
-            $('.photo-thumbnails').css('margin-top', filtersHeight);
-
-        } else {
-            $('#photo-filters').removeClass('fixed');
-            $('.photo-thumbnails').css('margin-top', 0);
-        }
-
-    });
-
-    $(window).on('resize',function(){
-        fromTop = $('#photo-filters').offset().top;
-        filtersHeight = $('#photo-filters').height();
-        
-    })
-==========================================================*/
 
 
 
@@ -107,7 +76,7 @@
     });
 
 
-})();
+});
 
 
 function toggleNav() {

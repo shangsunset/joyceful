@@ -9,6 +9,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             figureEl,
             linkEl,
             size,
+            firgureCaptionEl,
             item;
 
         for(var i = 0; i < numNodes; i++) {
@@ -20,7 +21,9 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                 continue;
             }
 
-            linkEl = figureEl.children[0]; // <a> element
+            figureCaptionEl = figureEl.children[1];
+            linkEl = figureCaptionEl.children[1]; //<a> element after modification
+            //linkEl = figureEl.children[0]; // <a> element
 
             size = linkEl.getAttribute('data-size').split('x');
 
