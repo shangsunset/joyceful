@@ -1,25 +1,33 @@
 $(function(){
 
-    var lastScrollTop = 0;
-    $(window).on('scroll', function(){
-      console.log('haha');
-      var st = $(this).scrollTop();
-      if (st > lastScrollTop){
-        // downscroll code
-        console.log("down");
-      } else {
-        // upscroll code
-        console.log("up");
-      }
-      lastScrollTop = st;
+    // var lastScrollTop = 0;
+    // $(window).on('scroll', function(){
+    //   console.log('haha');
+    //   var st = $(this).scrollTop();
+    //   if (st > lastScrollTop){
+    //     // downscroll code
+    //     console.log("down");
+    //   } else {
+    //     // upscroll code
+    //     console.log("up");
+    //   }
+    //   lastScrollTop = st;
+    // });
+
+    $(window).on("scroll", function(e){
+    console.log("window.scrolling");    
+    });
+    $("body").on("scroll", function(e){
+    console.log("body.scrolling");    
     });
 
 
 
     $(window).on('load', function() {
         $('.item').first().addClass('active');
-    });
         $('.carousel-indicators li').first().addClass('active');
+        $('ol.slides li').first().addClass('current');
+    });
 
     $('.carousel').carousel({
       pause: "false"

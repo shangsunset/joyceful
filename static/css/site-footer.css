@@ -28,12 +28,12 @@ footer .meta-links {
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 
-.container {
-  width: auto;
-  max-width: 1000px;
-  padding: 0 15px;
-}
-.container .text-muted {
+/* .container { */
+/*   width: auto; */
+/*   max-width: 1000px; */
+/*   padding: 0 15px; */
+/* } */
+footer .text-muted {
   font-family: Arial,sans-serif;
   /* border-top: 1px solid #333; */
   margin: 20px 0;

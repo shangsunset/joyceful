@@ -2,6 +2,7 @@
 
 {% block content %}
 
+
 <div id="scene" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -31,17 +32,10 @@
       </nav>
   </section>
 
-  {# <a id="anchor-arrow" href="#album-covers-index" class="animate rand"> #}
-  {#   <div id="scrolldown"> #}
-  {#           <p><font><font>CLICK</font></font></p> #}
-  {#           <div class="mouse"> #}
-  {#             <span><p><font><font>↓</font></font></p></span> #}
-  {#           </div> #}
-  {#   </div> #}
-  {# </a> #}
 
 
 </div><!-- carousel -->
+
 
 {# <div class="block"> #}
 {#   <div class="block-title"> #}
@@ -50,11 +44,6 @@
 {# </div> #}
 
 
-{# <div id="album-covers-index"> #}
-{#   {% for album in albums %} #}
-{#   <a class="single-album-cover" href="/gallery/{{album.get_absolute_url}}"><img src="..{{album.album_cover_thumbnail.url}}"></a> #}
-{#   {% endfor %} #}
-{# </div> #}
 
 <div class="grid">
   {% for album in albums %}

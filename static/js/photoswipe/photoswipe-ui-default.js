@@ -71,9 +71,9 @@ var PhotoSwipeUI_Default =
 
 			shareButtons: [
 				{id:'facebook', label:'Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
-				{id:'twitter', label:'Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
-				{id:'pinterest', label:'Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'},
-				{id:'download', label:'Download image', url:'{{raw_image_url}}', download:true}
+				{id:'twitter', label:'Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'}
+				// {id:'pinterest', label:'Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'},
+				// {id:'download', label:'Download image', url:'{{raw_image_url}}', download:true}
 			],
 			indexIndicatorSep: ' / '
 
@@ -184,6 +184,7 @@ var PhotoSwipeUI_Default =
 			for(var i = 0; i < pswp.options.shareButtons.length; i++) {
 				shareButtonData = pswp.options.shareButtons[i];
 
+        console.log(shareButtons[i])
 				shareURL = shareButtonData.url.replace('{{url}}', encodeURIComponent(window.location.href) )
 									.replace('{{image_url}}', encodeURIComponent(pswp.currItem.src || '') )
 									.replace('{{raw_image_url}}', pswp.currItem.src || '' )
