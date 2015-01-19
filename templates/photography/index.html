@@ -15,7 +15,7 @@
 	<div class="carousel-inner layer" role="listbox">
     {% for album in albums %}
 		<div class="item">
-      <div class="fill" style="background-image:url('../media/{{album.album_cover}}'); background-size: cover;"></div>
+      <div class="fill layer" data-depth="0.20" style="background-image:url('../media/{{album.album_cover}}'); background-size: cover;"></div>
 		</div>
     {% endfor %}
 
@@ -34,7 +34,7 @@
 
 
 
-</div><!-- carousel -->
+</div><!-- end of carousel -->
 
 
 {# <div class="block"> #}
@@ -44,6 +44,9 @@
 {# </div> #}
 
 
+<div id="triangle-topleft">
+  <p class="rotate-text" id="my-albums">Places</p>
+</div>
 
 <div class="grid">
   {% for album in albums %}
@@ -58,5 +61,20 @@
   {% endfor %}
 </div>
 
+
+
+<script type="text/javascript" charset="utf-8">
+  
+  var stickyTriangle = $('#triangle-topleft').offset().top;
+  console.log(stickyTriangle)
+  $(window).scroll(function(event){
+      if ($(window).scrollTop() > stickyTriangle) {
+          $('#triangle-topleft').addClass('affix');
+      }
+      else {
+          $('#triangle-topleft').removeClass('affix');
+      }  
+  });
+</script>
 {% endblock %}
 

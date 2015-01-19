@@ -10,7 +10,7 @@
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 80px;
+  height: 100px;
   background-color: #000;
 }
 
@@ -34,10 +34,11 @@ footer .meta-links {
 /*   padding: 0 15px; */
 /* } */
 footer .text-muted {
+
   font-family: Arial,sans-serif;
   /* border-top: 1px solid #333; */
-  margin: 20px 0;
-  margin-top: 40px;
+  /* margin: 20px 0; */
+  margin-top: 60px;
   color: #999;
   font-size: 11px;
 }

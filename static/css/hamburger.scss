@@ -1,0 +1,53 @@
+.button-toggle-navigation {
+  background-color: transparent;
+  border: 0;
+  border-bottom: .25em solid red;
+  border-top: .25em solid red;
+  font-size: 32px;
+  cursor: pointer;
+  height: 1.5em;
+  margin: .75em .375em;
+  outline: 0;
+  position: relative;
+  transition: border-color 150ms ease-out,
+              transform 150ms ease-out;
+  width: 2.25em;
+ 
+  &::after,
+  &::before {
+    border-bottom: .25em solid red;
+    bottom: .375em;
+    content: '';
+    height: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transition: transform 200ms ease-out;
+  }
+  
+  span {
+    color: transparent;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+  }
+}
+
+.isActive {
+  border-color: transparent;
+  transform: rotateZ(90deg);
+  
+  &::after,
+  &::before {
+    transition: transform 200ms ease-out;
+  }
+  
+  &::after {
+    transform: rotateZ(45deg);
+  }
+  
+  &::before {
+    transform: rotateZ(-45deg);
+  }
+}

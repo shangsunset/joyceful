@@ -1,25 +1,65 @@
 $(function(){
 
-    // var lastScrollTop = 0;
-    // $(window).on('scroll', function(){
-    //   console.log('haha');
-    //   var st = $(this).scrollTop();
-    //   if (st > lastScrollTop){
-    //     // downscroll code
-    //     console.log("down");
-    //   } else {
-    //     // upscroll code
-    //     console.log("up");
-    //   }
-    //   lastScrollTop = st;
-    // });
 
-    $(window).on("scroll", function(e){
-    console.log("window.scrolling");    
-    });
-    $("body").on("scroll", function(e){
-    console.log("body.scrolling");    
-    });
+  // Hide Header on on scroll down
+  var didScroll;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var navbarHeight = $('.top-menu-bar').outerHeight();
+
+  $(window).scroll(function(event){
+      didScroll = true;
+  });
+
+
+
+  setInterval(function() {
+      if (didScroll) {
+          hasScrolled();
+          didScroll = false;
+      }
+  }, 250);
+
+  function hasScrolled() {
+      var st = $(this).scrollTop();
+      
+      // Make sure they scroll more than delta
+      if(Math.abs(lastScrollTop - st) <= delta)
+          return;
+      
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      // This is necessary so you never see what is "behind" the navbar.
+      if (st > lastScrollTop && st > navbarHeight){
+          // Scroll Down
+          $('.top-menu-bar').removeClass('nav-down').addClass('nav-up');
+      } else {
+          // Scroll Up
+          if(st + $(window).height() < $(document).height()) {
+              // $('.top-menu-bar').css('background', '#fff');
+              // $('.top-menu-bar').css('color', '#81d8d0');
+
+              $('.top-menu-bar').removeClass('nav-up').addClass('nav-down');
+          }
+      }
+      
+      lastScrollTop = st;
+  }
+
+
+
+  // if ($(window).scrollTop() === 0) {
+  //   $('.top-menu-bar').css('background', 'transparent');
+  // }
+
+
+
+
+
+  $('.button-toggle-navigation').on('click', function() {
+    $(this).toggleClass('isActive');
+
+  });
+
 
 
 
