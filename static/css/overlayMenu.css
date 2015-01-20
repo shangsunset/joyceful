@@ -59,7 +59,7 @@
 	color: #fff;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 /* .overlay ul li:hover { */

@@ -278,7 +278,9 @@ body
     background-image: none !important
 }
 
-
+#album-cover {
+  padding-bottom: 50px;
+}
 
 #album-cover img {
 
@@ -380,7 +382,7 @@ header {
 
 
 #pswp-container {
-  padding-top: 50px;
+  padding: 50px 0;
   background: #f7f7f7;
 
 }
@@ -513,6 +515,44 @@ header {
 /* Internet Explorer */
 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
+}
+
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+.footer {
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  background-color: #81d8d0;
+}
+
+footer .meta-links {
+  float: right;
+  margin-left: 40px;
+  color: #fff;
+}
+
+.meta-links i {
+  margin-right: 5px;
+}
+
+footer .text-muted {
+
+  font-family: 'Raleway', Arial, sans-serif;
+  /* border-top: 1px solid #333; */
+  /* margin: 20px 0; */
+  margin-top: 60px;
+  color: #fff;
+  font-size: 11px;
+}
+
+.text-muted span {
+  padding-top: 36px;
 }
 
 /* ==========================================================================

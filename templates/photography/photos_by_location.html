@@ -13,7 +13,7 @@
 
 
 <div id="pswp-container">
-  <div class="pswp-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+  <div id="gridLoading" class="pswp-gallery gridLoading effect-3" itemscope itemtype="http://schema.org/ImageGallery">
 
       {% for photo in photos %}
       <figure class="effect-bubba" itemscope itemtype="http://schema.org/ImageObject">
@@ -96,5 +96,17 @@
 
 </div>
 
+
+
+    <script src="../../static/js/imagesLoaded.pkgd.min.js"></script>
+    <script src="../../static/js/AnimOnScroll.js"></script>
+    <script>
+
+			new AnimOnScroll( document.getElementById( 'gridLoading' ), {
+				minDuration : 0.4,
+				maxDuration : 0.7,
+				viewportFactor : 0.2
+			} );
+    </script>
 {% endblock %}
 
