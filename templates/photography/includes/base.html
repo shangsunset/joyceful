@@ -11,8 +11,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
         {% load staticfiles %}
+        <link rel='shortcut icon' type='image/x-icon' href='{% static 'favicon.ico' %}' />
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Raleway:900' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
@@ -46,7 +46,7 @@
 			<nav>
 				<ul>
           {% for album in albums %}
-          <li><a href="/gallery/{{album.get_absolute_url}}"><span>{{album.name}}</span></a></li>
+          <li><a href="/albums/{{album.get_absolute_url}}"><span>{{album.name}}</span></a></li>
           {% endfor %}
 				</ul>
 			</nav>

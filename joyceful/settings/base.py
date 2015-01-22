@@ -1,5 +1,5 @@
 """
-Django settings for joyceful project.
+Django base settings for joyceful project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -11,17 +11,18 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-SETTINGS_DIR = os.path.dirname(__file__)
+SETTINGS_DIR = os.path.join(os.path.dirname(__file__), os.pardir)
 PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
 PROJECT_PATH = os.path.abspath(PROJECT_PATH)
+
 TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
-DATABASE_PATH = os.path.join(PROJECT_PATH, 'joyceful.db')
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     TEMPLATE_PATH,
 )
+
 
 STATIC_PATH = os.path.join(PROJECT_PATH,'static')
 
@@ -38,12 +39,9 @@ MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media')
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '9tv8n2(-pr_gyk!#s17o=ge76q9ngfuh0^&198d8-+6(t@4adf'
+SECRET_KEY = os.environ['JOYCEFUL_SECRET_KEY']
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -57,10 +55,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'south',
-    'photography',
-    'imagekit'
+    'django.contrib.staticfiles'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -77,15 +72,6 @@ ROOT_URLCONF = 'joyceful.urls'
 WSGI_APPLICATION = 'joyceful.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': DATABASE_PATH,
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -116,6 +102,4 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 )
 
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

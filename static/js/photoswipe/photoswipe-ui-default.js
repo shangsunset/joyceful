@@ -184,7 +184,6 @@ var PhotoSwipeUI_Default =
 			for(var i = 0; i < pswp.options.shareButtons.length; i++) {
 				shareButtonData = pswp.options.shareButtons[i];
 
-        console.log(shareButtons[i])
 				shareURL = shareButtonData.url.replace('{{url}}', encodeURIComponent(window.location.href) )
 									.replace('{{image_url}}', encodeURIComponent(pswp.currItem.src || '') )
 									.replace('{{raw_image_url}}', pswp.currItem.src || '' )

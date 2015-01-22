@@ -49,7 +49,7 @@ def contact(request):
             message = form.cleaned_data['message']
             from_email = form.cleaned_data['email']
 
-            recipients = ['shangsunset@gmail.com']
+            recipients = ['example@email.com']
 
             try:
                 send_mail(subject, message, from_email, recipients)

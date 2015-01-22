@@ -266,7 +266,7 @@ nav a svg {
 
 .nav-circlepop a:hover .icon-wrap::before,
 .nav-circlepop a:hover .icon-wrap::after {
-	background: #cc6055;
+	background: #81d8d0;
 }
 
 .nav-circlepop a:hover .icon-wrap::before {
