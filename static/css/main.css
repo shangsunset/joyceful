@@ -201,6 +201,10 @@ body
     /* box-shadow: 1px 0px 2px #000; */
 }
 
+.transparent {
+  background: transparent;
+}
+
 #logo {
     font-family: 'Raleway', Arial, sans-serif;
     font-size: 27px;
@@ -239,14 +243,14 @@ body
 
 #scene {
   width: 100%;
-  border-top: #f7f7f7 60px solid;
+  /* border-top: #f7f7f7 60px solid; */
   /* border-bottom: #f7f7f7 60px solid; */
 }
 
 .carousel,.item,.active{height:100%;  overflow: hidden; }
 
 .carousel-inner{
-    height:96%;
+    height:110%;
     position: absolute;
     width: 110% !important;
     left: -5%;

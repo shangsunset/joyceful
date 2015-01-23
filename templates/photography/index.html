@@ -15,7 +15,7 @@
 	<div class="carousel-inner layer" role="listbox">
     {% for album in albums %}
 		<div class="item">
-      <div class="fill layer" data-depth="0.20" style="background-image:url('../media/{{album.album_cover}}'); background-size: cover;"></div>
+      <div class="fill layer" data-depth="0.40" style="background-image:url('../media/{{album.album_cover}}'); background-size: cover;"></div>
 		</div>
     {% endfor %}
 
@@ -43,6 +43,8 @@
   <p class="rotate-text" id="my-albums">Places</p>
 </div>
 
+
+<div>
 <div class="grid gridLoading effect-2" id="gridLoading">
   {% for album in albums %}
   <figure class="effect-milo">
@@ -54,6 +56,7 @@
     </figcaption>			
   </figure>
   {% endfor %}
+</div>
 </div>
 
 
@@ -70,7 +73,13 @@
     viewportFactor : 0.2
   });
   
+
   var stickyTriangle = $('#triangle-topleft').offset().top;
+  $(window).resize(function() {
+    stickyTriangle = $('#triangle-topleft').offset().top;
+
+  });
+
   $(window).scroll(function(event){
       if ($(window).scrollTop() > stickyTriangle) {
           $('#triangle-topleft').addClass('affix');
@@ -83,6 +92,34 @@
 
   var scene = document.getElementById('scene');
   var parallax = new Parallax(scene);
+
+
+
+
+
+  $('.button-toggle-navigation').on('click', function() {
+    $(this).toggleClass('isActive');
+    if ($(this).hasClass('isActive')) {
+      $('.top-menu-bar').css('background', 'transparent');
+    }
+    else {
+      $('.top-menu-bar').css('background', '#fff');
+      
+    }
+
+  });
 </script>
 {% endblock %}
+
+
+{% block customstyle %}
+
+  <style>
+    .top-menu-bar {
+      background: #fff;
+    }
+  </style>
+{% endblock %}
+
+
 

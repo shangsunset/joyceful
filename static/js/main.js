@@ -47,20 +47,6 @@ $(function(){
 
 
 
-  // if ($(window).scrollTop() === 0) {
-  //   $('.top-menu-bar').css('background', 'transparent');
-  // }
-
-
-
-
-
-  $('.button-toggle-navigation').on('click', function() {
-    $(this).toggleClass('isActive');
-
-  });
-
-
 
 
     $(window).on('load', function() {
