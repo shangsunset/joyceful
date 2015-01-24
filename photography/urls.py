@@ -10,3 +10,6 @@ urlpatterns = patterns('photography.views',
         # url(r'^albums/(?P<album_name>[a-zA-Z0-9-]+)/(?P<slug>[a-zA-Z0-9-]+)/$', views.photo_detail, name='photo_detail'),
         url(r'^contact/$', views.contact, name='contact'),
         )
+
+handler404 = 'photography.views.custom_404'
+handler500 = 'photography.views.server_error'

@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_list_or_404, get_object_or_404, render
 from .models import Album, Photo
 from django.template import RequestContext
 from django.template.response import TemplateResponse
@@ -10,8 +10,7 @@ from django.core.mail import send_mail, BadHeaderError
 
 def index(request):
     context = RequestContext(request)
-    albums = Album.objects.all()
-    print albums
+    albums = get_list_or_404(Album)
     context_dict = {'albums': albums}
 
     return render_to_response('photography/index.html', context_dict, context)
@@ -24,8 +23,8 @@ def photos_by_location(request, slug):
     context_dict = {}
 
     try:
-        album = Album.objects.get(name=album_name)
-        photos = Photo.objects.filter(album=album)
+        album = get_object_or_404(Album, name=album_name)
+        photos = get_list_or_404(Photo, album=album)
         context_dict['album'] = album
         context_dict['photos'] = photos
     except Album.DoesNotExist:
@@ -65,3 +64,12 @@ def contact(request):
     # else:
     #     form = ContactForm()
     # return render_to_response('photography/contact_form.html', {'form': form}, context)
+
+
+def custom_404(request):
+    return render_to_response(request, '404.html')
+
+def server_error(request):
+    response = render(request, '500.html')
+    response.status_code = 500
+    return response
