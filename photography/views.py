@@ -1,8 +1,8 @@
 from django.shortcuts import render_to_response
-from photography.models import Album, Photo
+from .models import Album, Photo
 from django.template import RequestContext
 from django.template.response import TemplateResponse
-from photography.forms import ContactForm
+from .forms import ContactForm
 import json
 from django.http import HttpResponse
 from django.core.mail import send_mail, BadHeaderError
@@ -11,8 +11,8 @@ from django.core.mail import send_mail, BadHeaderError
 def index(request):
     context = RequestContext(request)
     albums = Album.objects.all()
+    print albums
     context_dict = {'albums': albums}
-    context_dict['range'] = range(3)
 
     return render_to_response('photography/index.html', context_dict, context)
 

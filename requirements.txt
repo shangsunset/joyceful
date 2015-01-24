@@ -2,4 +2,8 @@ Django==1.6.5
 Pillow==2.6.1
 South==1.0.1
 django-admin-bootstrapped==2.2.1
+django-appconf==0.6
+django-imagekit==3.2.4
+pilkit==1.1.12
+six==1.8.0
 wsgiref==0.1.2
