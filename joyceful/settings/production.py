@@ -20,15 +20,6 @@ TEMPLATE_DEBUG = DEBUG
 
 
 
-# Application definition
-
-INSTALLED_APPS += (
-    'south',
-    'photography',
-    'imagekit'
-)
-
-
 
 
 # Database
