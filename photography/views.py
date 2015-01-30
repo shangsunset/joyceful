@@ -7,6 +7,8 @@ import json
 from django.http import HttpResponse
 from django.core.mail import send_mail, BadHeaderError
 
+def hello_world(request):
+    return HttpResponse('Hello, world!')
 
 def index(request):
     context = RequestContext(request)

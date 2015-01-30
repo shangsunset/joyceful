@@ -10,7 +10,7 @@ import os
 
 
 
-DATABASE_PATH = os.path.join(PROJECT_PATH, 'joycefuldb')
+# DATABASE_PATH = os.path.join(PROJECT_DIR, 'joycefuldb')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -31,8 +31,8 @@ DATABASES = {
         'NAME': 'joycefuldb',
         'USER': 'joyceful',
         'PASSWORD': 'sunset8321072',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 

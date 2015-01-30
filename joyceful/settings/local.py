@@ -9,7 +9,7 @@ import os
 
 
 
-DATABASE_PATH = os.path.join(PROJECT_PATH, 'joyceful.db')
+DATABASE_PATH = os.path.join(PROJECT_DIR, 'joyceful.db')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!

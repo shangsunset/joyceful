@@ -12,10 +12,10 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 
 SETTINGS_DIR = os.path.join(os.path.dirname(__file__), os.pardir)
-PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
-PROJECT_PATH = os.path.abspath(PROJECT_PATH)
+PROJECT_DIR = os.path.join(SETTINGS_DIR, os.pardir)
+PROJECT_DIR = os.path.abspath(PROJECT_DIR)
 
-TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
+TEMPLATE_PATH = os.path.join(PROJECT_DIR, 'templates')
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -24,16 +24,17 @@ TEMPLATE_DIRS = (
 )
 
 
-STATIC_PATH = os.path.join(PROJECT_PATH,'static')
+STATIC_ROOT = os.path.join(PROJECT_DIR,'static_collected')
 
 STATIC_URL = '/static/' # You may find this is already defined as such.
 
 STATICFILES_DIRS = (
-            STATIC_PATH,
+            os.path.join(PROJECT_DIR,'static'),
+
 
         )
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media')
+MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/

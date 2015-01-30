@@ -6,16 +6,22 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
     # url(r'^$', 'joyceful.views.home', name='home'),
-    url(r'^', include('photography.urls')),
+    # url(r'^', include('photography.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'photography.views.index', name='index'),
+    url(r'^albums/', include('photography.urls')),
 )
 
 if settings.DEBUG:
     urlpatterns += patterns(
         'django.views.static',
-        (r'media/(?P<path>.*)',
-        'serve',
-        {'document_root': settings.MEDIA_ROOT}), )
+        (r'media/(?P<path>.*)', 'serve',
+        {'document_root': settings.MEDIA_ROOT}),
+    )
+    urlpatterns += patterns(
+        'django.views.static',
+        (r'static/(?P<path>.*)', 'serve',
+        {'document_root': settings.STATIC_ROOT}),
+    )
