@@ -44,7 +44,7 @@ SECRET_KEY = os.environ['JOYCEFUL_SECRET_KEY']
 
 ADMINS = ('yshang', 'shangsunset@gmail.com')
 
-ALLOWED_HOSTS = ['104.236.33.114', '127.0.0.1']
+ALLOWED_HOSTS = ['104.236.33.114', '127.0.0.1', 'localhost']
 
 
 # Application definition
