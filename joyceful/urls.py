@@ -7,11 +7,11 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # url(r'^$', 'joyceful.views.home', name='home'),
-    url(r'^', include('photography.urls')),
+    # url(r'^', include('photography.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    # url(r'^$', 'photography.views.index', name='index'),
-    # url(r'^albums/', include('photography.urls')),
+    url(r'^$', 'photography.views.index', name='index'),
+    url(r'^albums/', include('photography.urls')),
 )
 
 if settings.DEBUG:

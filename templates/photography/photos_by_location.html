@@ -100,8 +100,9 @@
 
 
 
-    <script src="../../static/js/imagesLoaded.pkgd.min.js"></script>
-    <script src="../../static/js/AnimOnScroll.js"></script>
+    {% load staticfiles %}
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/AnimOnScroll.js' %}"></script>
     <script>
 
 			new AnimOnScroll( document.getElementById( 'gridLoading' ), {

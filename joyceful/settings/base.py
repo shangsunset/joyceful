@@ -42,9 +42,9 @@ MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['JOYCEFUL_SECRET_KEY']
 
-ADMINS = ('shangyeshen', 'shangsunset@gmail.com')
+ADMINS = ('yshang', 'shangsunset@gmail.com')
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['104.236.33.114', '127.0.0.1']
 
 
 # Application definition
