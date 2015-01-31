@@ -1,0 +1,10 @@
+2015-01-31 16:33:28,510 INFO supervisord started with pid 15322
+2015-01-31 16:33:29,514 INFO spawned: 'gunicorn' with pid 15325
+2015-01-31 16:33:30,519 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2015-01-31 16:34:09,205 WARN received SIGINT indicating exit request
+2015-01-31 16:34:09,219 INFO waiting for gunicorn to die
+2015-01-31 16:34:09,345 INFO stopped: gunicorn (exit status 0)
+2015-01-31 16:34:47,769 INFO daemonizing the supervisord process
+2015-01-31 16:34:47,770 INFO supervisord started with pid 15385
+2015-01-31 16:34:48,775 INFO spawned: 'gunicorn' with pid 15395
+2015-01-31 16:34:49,778 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
