@@ -8,5 +8,3 @@ urlpatterns = patterns('photography.views',
         url(r'^(?P<slug>[a-zA-Z0-9-]+)/$', views.photos_by_location, name='photos_by_location'),
         )
 
-handler404 = 'photography.views.custom_404'
-handler500 = 'photography.views.server_error'

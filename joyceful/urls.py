@@ -14,6 +14,11 @@ urlpatterns = patterns('',
     url(r'^albums/', include('photography.urls')),
 )
 
+
+
+# handler404 = 'photography.views.custom_404'
+# handler500 = 'photography.views.server_error'
+
 if settings.DEBUG:
     urlpatterns += patterns(
         'django.views.static',

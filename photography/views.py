@@ -68,10 +68,10 @@ def contact(request):
     # return render_to_response('photography/contact_form.html', {'form': form}, context)
 
 
-def custom_404(request):
-    return render_to_response(request, '404.html')
-
-def server_error(request):
-    response = render(request, '500.html')
-    response.status_code = 500
-    return response
+# def custom_404(request):
+#     return render_to_response('404.html')
+#
+# def server_error(request):
+#     response = render(request, '500.html')
+#     response.status_code = 500
+#     return response
