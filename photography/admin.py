@@ -1,5 +1,5 @@
 from django.contrib import admin
-from photography.models import Album, Photo
+from .models import Album, Photo
 
 class PhotoAdmin(admin.ModelAdmin):
     list_display = ('title', 'caption', 'created')
