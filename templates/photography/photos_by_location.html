@@ -3,12 +3,12 @@
 {% block content %}
 
 
-<header>
-  <div id="album-cover">
-    <h1 class="album-title">{{album.name}}<span></span></h1>
-    {# <div id="album-cover" style="background-image:url('../../media/{{album.album_cover}}')"></div> #}
-    <img src="../../media/{{album.album_cover}}" height="580px" width="auto"/>
-  </div>
+<header id="scene">
+  {# <div id="album-cover"> #}
+    {# <h1 class="album-title">{{album.name}}<span></span></h1> #}
+    <div class="layer" data-depth="0.02" id="album-cover" style="background-image:url('../../media/{{album.album_cover}}'); background-size: cover;"></div>
+    {# <img src="../../media/{{album.album_cover}}"/> #}
+  {# </div> #}
 </header>
 
 
@@ -103,7 +103,11 @@
     {% load staticfiles %}
     <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
     <script src="{% static 'js/AnimOnScroll.js' %}"></script>
+    <script src="{% static 'js/parallax.js' %}"></script>
     <script>
+
+      var scene = document.getElementById('scene');
+      var parallax = new Parallax(scene);
 
 			new AnimOnScroll( document.getElementById( 'gridLoading' ), {
 				minDuration : 0.4,

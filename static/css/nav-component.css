@@ -214,6 +214,10 @@ nav a svg {
 	transition: transform 0.3s, opacity 0.3s;
 	-webkit-transform: scale(0.9);
 	transform: scale(0.9);
+
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 }
 
 .nav-circlepop .icon-wrap {
@@ -235,7 +239,7 @@ nav a svg {
 	left: 25%;
 	width: 3px;
 	height: 50%;
-	background: #fff;
+	background: #81d8d0;
 	content: '';
 	-webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
 	transition: transform 0.3s, background-color 0.3s;

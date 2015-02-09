@@ -15,7 +15,8 @@
 	<div class="carousel-inner layer" role="listbox">
     {% for album in albums %}
 		<div class="item">
-      <div class="fill layer" data-depth="0.40" style="background-image:url('../media/{{album.album_cover}}'); background-size: cover;"></div>
+      {# <div class="fill layer" data-depth="0.10" style="background-image:url('../media/{{album.album_cover}}'); background-size: cover;"></div> #}
+      <div class="fill layer" data-depth="0.10"><img src="../media/{{album.album_cover}}" style="height: 600px; width: auto; margin: 100px auto 0px;"></div>
 		</div>
     {% endfor %}
 
@@ -39,12 +40,12 @@
 
 
 
-<div id="triangle-topleft">
-  <p class="rotate-text" id="my-albums">Places</p>
-</div>
+{# <div id="triangle-topleft"> #}
+{#   <p class="rotate-text" id="my-albums">Places</p> #}
+{# </div> #}
 
 
-<div>
+<div style="background: #f7f7f7;">
 <div class="grid gridLoading effect-2" id="gridLoading">
   {% for album in albums %}
   <figure class="effect-milo">
@@ -75,24 +76,24 @@
   });
   
 
-  var stickyTriangle = $('#triangle-topleft').offset().top;
-  $(window).resize(function() {
-    stickyTriangle = $('#triangle-topleft').offset().top;
+  {# var stickyTriangle = $('#triangle-topleft').offset().top; #}
+  {# $(window).resize(function() { #}
+  {#   stickyTriangle = $('#triangle-topleft').offset().top; #}
+  {#  #}
+  {# }); #}
 
-  });
-
-  $(window).scroll(function(event){
-      if ($(window).scrollTop() > stickyTriangle) {
-          $('#triangle-topleft').addClass('affix');
-      }
-      else {
-          $('#triangle-topleft').removeClass('affix');
-      }  
-  });
+  {# $(window).scroll(function(event){ #}
+  {#     if ($(window).scrollTop() > stickyTriangle) { #}
+  {#         $('#triangle-topleft').addClass('affix'); #}
+  {#     } #}
+  {#     else { #}
+  {#         $('#triangle-topleft').removeClass('affix'); #}
+  {#     }   #}
+  {# }); #}
 
 
-  var scene = document.getElementById('scene');
-  var parallax = new Parallax(scene);
+  {# var scene = document.getElementById('scene'); #}
+  {# var parallax = new Parallax(scene); #}
 
 
 
@@ -100,13 +101,13 @@
 
   $('.button-toggle-navigation').on('click', function() {
     $(this).toggleClass('isActive');
-    if ($(this).hasClass('isActive')) {
-      $('.top-menu-bar').css('background', 'transparent');
-    }
-    else {
-      $('.top-menu-bar').css('background', '#fff');
+    //if ($(this).hasClass('isActive')) {
+     // $('.top-menu-bar').css('background', 'transparent');
+    //}
+    //else {
+     // $('.top-menu-bar').css('background', '#fff');
       
-    }
+    //}
 
   });
 </script>
@@ -117,7 +118,6 @@
 
   <style>
     .top-menu-bar {
-      background: #fff;
     }
   </style>
 {% endblock %}
