@@ -432,7 +432,8 @@ header.album-cover {
 
 .grid {
   overflow: hidden;
-  padding: 4em 0 4em;
+  padding: 0;
+  max-width: 100%;
 }
 
 
@@ -563,9 +564,13 @@ header.album-cover {
 }
 
 
+
 .grid figure {
   margin: 0px;
-  border: 1px solid white;
+	max-width: 800px;
+	max-height: 800px;
+  width: 100%;
+  display: inline;
 }
 
 

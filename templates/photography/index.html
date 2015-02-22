@@ -1,5 +1,6 @@
 {% extends 'photography/includes/base.html' %}
 
+{% load custom_tags %}
 {% block content %}
 
 
@@ -44,17 +45,56 @@
 {#   <p class="rotate-text" id="my-albums">Places</p> #}
 {# </div> #}
 
-
 <div class="grid gridLoading effect-2" id="gridLoading">
+  {% count_big as big %}
+  {% count_small as small %}
   {% for album in albums %}
-  <figure class="effect-milo">
-  <img src="..{{album.album_cover_thumbnail.url}}" alt=""/>
-    <figcaption>
-      <h2><span>{{album.name}}</span></h2>
-      <p>Steve was afraid of the Boogieman.</p>
-      <a href="/albums/{{album.get_absolute_url}}">View more</a>
-    </figcaption>			
-  </figure>
+    {% random_number as rand %}
+    {% if rand == 1 %}
+      {% if small < 2 %}
+        {% increment small as small %}
+        <figure class="effect-milo" style="width: 25%;">
+        <img src="..{{album.album_cover_thumbnail.url}}" alt=""/>
+          <figcaption>
+            <h2><span>{{album.name}}</span></h2>
+            <p>Steve was afraid of the Boogieman.</p>
+            <a href="/albums/{{album.get_absolute_url}}">View more</a>
+          </figcaption>			
+        </figure>
+      {% else %}
+        <figure class="effect-milo" style="width: 50%;">
+        <img src="..{{album.album_cover_thumbnail.url}}" alt=""/>
+          <figcaption>
+            <h2><span>{{album.name}}</span></h2>
+            <p>Steve was afraid of the Boogieman.</p>
+            <a href="/albums/{{album.get_absolute_url}}">View more</a>
+          </figcaption>			
+        </figure>
+      {% endif %}
+
+    {% else %}
+      {% if big < 1 %}
+        {% increment big as big %}
+        <figure class="effect-milo" style="width: 50%;">
+        <img src="..{{album.album_cover_thumbnail.url}}" alt=""/>
+          <figcaption>
+            <h2><span>{{album.name}}</span></h2>
+            <p>Steve was afraid of the Boogieman.</p>
+            <a href="/albums/{{album.get_absolute_url}}">View more</a>
+          </figcaption>			
+        </figure>
+      {% else %}
+        <figure class="effect-milo" style="width: 25%;">
+        <img src="..{{album.album_cover_thumbnail.url}}" alt=""/>
+          <figcaption>
+            <h2><span>{{album.name}}</span></h2>
+            <p>Steve was afraid of the Boogieman.</p>
+            <a href="/albums/{{album.get_absolute_url}}">View more</a>
+          </figcaption>			
+        </figure>
+      {% endif %}
+
+    {% endif %}
   {% endfor %}
 </div>
 

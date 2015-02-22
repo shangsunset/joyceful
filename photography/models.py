@@ -9,13 +9,13 @@ from imagekit.utils import get_field_info
 
 class AlbumCoverThumbnail(ImageSpec):
     format = 'JPEG'
-    options = {'quality': 60}
+    options = {'quality': 100}
 
     @property
     def processors(self):
         model, field_name = get_field_info(self.source)
         # return [ResizeToFill(model.album_cover.width/3, model.album_cover.height/3)]
-        return [ResizeToFill(480, 360)]
+        return [ResizeToFill(800, 600)]
 
 register.generator('photography:album:album_cover_thumbnail', AlbumCoverThumbnail)
 
@@ -42,7 +42,7 @@ class Album(models.Model):
 
 class ImageThumbnail(ImageSpec):
     format = 'JPEG'
-    options = {'quality': 60}
+    options = {'quality': 100}
 
     @property
     def processors(self):

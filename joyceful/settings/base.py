@@ -51,6 +51,7 @@ ALLOWED_HOSTS = ['104.236.33.114', '127.0.0.1', 'localhost']
 
 INSTALLED_APPS = (
     'django_admin_bootstrapped',
+    'photography',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,7 +59,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'south',
-    'photography',
     'imagekit'
 )
 
