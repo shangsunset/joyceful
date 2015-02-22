@@ -3,39 +3,39 @@
 {% block content %}
 
 
-<div id="scene" class="carousel slide" data-ride="carousel">
+{# <div id="scene" class="carousel slide" data-ride="carousel"> #}
   <!-- Indicators -->
-  <ol class="carousel-indicators">
-    {% for album in albums %}
-    <li data-target="#scene" data-slide-to="{{album.id}}"></li>
-    {% endfor %}
-  </ol>
+  {# <ol class="carousel-indicators"> #}
+  {#   {% for album in albums %} #}
+  {#   <li data-target="#scene" data-slide-to="{{album.id}}"></li> #}
+  {#   {% endfor %} #}
+  {# </ol> #}
 
 	<!-- Wrapper for slides -->
-	<div class="carousel-inner layer" role="listbox">
-    {% for album in albums %}
-		<div class="item">
-      {# <div class="fill layer" data-depth="0.10" style="background-image:url('../media/{{album.album_cover}}'); background-size: cover;"></div> #}
-      <div class="fill layer" data-depth="0.10"><img src="../media/{{album.album_cover}}" style="height: 600px; width: auto; margin: 100px auto 0px;"></div>
-		</div>
-    {% endfor %}
-
-	</div>
-
-  <section>
-      <nav class="nav-circlepop">
-          <a class="prev" href="#scene" data-slide="prev">
-              <span class="icon-wrap"></span>
-          </a>
-          <a class="next" href="#scene" data-slide="next">
-              <span class="icon-wrap"></span>
-          </a>
-      </nav>
-  </section>
-
-
-
-</div><!-- end of carousel -->
+{# 	<div class="carousel-inner layer" role="listbox"> #}
+{#     {% for album in albums %} #}
+{# 		<div class="item"> #}
+{#       <div class="fill layer" data-depth="0.10"><img src="../media/{{album.album_cover}}" style="height: 600px; width: auto; margin: 100px auto 0px;"></div> #}
+{# 		</div> #}
+{#     {% endfor %} #}
+{#  #}
+{# 	</div> #}
+{#  #}
+{#   <section> #}
+{#       <nav class="nav-circlepop"> #}
+{#           <a class="prev" href="#scene" data-slide="prev"> #}
+{#               <span class="icon-wrap"></span> #}
+{#           </a> #}
+{#           <a class="next" href="#scene" data-slide="next"> #}
+{#               <span class="icon-wrap"></span> #}
+{#           </a> #}
+{#       </nav> #}
+{#   </section> #}
+{#  #}
+{#  #}
+{#  #}
+{# </div> #}
+<!-- end of carousel -->
 
 
 
@@ -45,7 +45,6 @@
 {# </div> #}
 
 
-<div style="background: #f7f7f7;">
 <div class="grid gridLoading effect-2" id="gridLoading">
   {% for album in albums %}
   <figure class="effect-milo">
@@ -57,7 +56,6 @@
     </figcaption>			
   </figure>
   {% endfor %}
-</div>
 </div>
 
 

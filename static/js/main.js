@@ -1,6 +1,10 @@
 $(function(){
 
 
+  var oVal;
+
+
+
   // Hide Header on on scroll down
   var didScroll;
   var lastScrollTop = 0;
@@ -9,6 +13,9 @@ $(function(){
 
   $(window).scroll(function(event){
       didScroll = true;
+
+      oVal = ($(window).scrollTop() / 240);
+      $('.blur').css("opacity", oVal);
   });
 
 

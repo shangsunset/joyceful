@@ -3,14 +3,14 @@
 {% block content %}
 
 
-<header id="scene">
-  {# <div id="album-cover"> #}
-    {# <h1 class="album-title">{{album.name}}<span></span></h1> #}
-    <div class="layer" data-depth="0.02" id="album-cover" style="background-image:url('../../media/{{album.album_cover}}'); background-size: cover;"></div>
-    {# <img src="../../media/{{album.album_cover}}"/> #}
-  {# </div> #}
-</header>
+<header class="album-cover"  data-depth="0.10" style="background-image:url('../../media/{{album.album_cover}}'); background-size: cover;" data-0="background-position:0px -100px;" data-500="background-position:0px -250px;"></header>
 
+<div class="container album-intro">
+  <div class="center-block">
+    <h1 class="album-title">{{album.name}}</h1>
+    <h2 class="album-description">This is a dummy description. This is a dummy description. Doritos cheetos lays.</h2>
+  </div>
+</div>
 
 <div id="pswp-container">
   <div id="gridLoading" class="pswp-gallery gridLoading effect-3" itemscope itemtype="http://schema.org/ImageGallery">
@@ -106,8 +106,8 @@
     <script src="{% static 'js/parallax.js' %}"></script>
     <script>
 
-      var scene = document.getElementById('scene');
-      var parallax = new Parallax(scene);
+      {# var scene = document.getElementById('scene'); #}
+      {# var parallax = new Parallax(scene); #}
 
 			new AnimOnScroll( document.getElementById( 'gridLoading' ), {
 				minDuration : 0.4,
