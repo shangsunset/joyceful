@@ -1,7 +1,6 @@
 $(function(){
 
 
-  var oVal;
 
 
 
@@ -13,9 +12,6 @@ $(function(){
 
   $(window).scroll(function(event){
       didScroll = true;
-
-      oVal = ($(window).scrollTop() / 240);
-      $('.blur').css("opacity", oVal);
   });
 
 
@@ -56,16 +52,16 @@ $(function(){
 
 
 
-    $(window).on('load', function() {
-        $('.item').first().addClass('active');
-        $('.carousel-indicators li').first().addClass('active');
-        $('ol.slides li').first().addClass('current');
-    });
-
-    $('.carousel').carousel({
-      pause: "false"
-    });
-
+    // $(window).on('load', function() {
+    //     $('.item').first().addClass('active');
+    //     $('.carousel-indicators li').first().addClass('active');
+    //     $('ol.slides li').first().addClass('current');
+    // });
+    //
+    // $('.carousel').carousel({
+    //   pause: "false"
+    // });
+    //
 
 
 
@@ -95,15 +91,14 @@ $(function(){
     });
 
 
-    var $container = $('#album-covers-index');
-    // initialize Masonry after all images have loaded
-    $container.imagesLoaded(function() {
-      $container.masonry({
-        itemSelector: '.single-album-cover',
-        // columWidth: '5%',
-        isFitWidth: true
-      });
-    });
+    // var $container = $('.gridLoading');
+    // // initialize Masonry after all images have loaded
+    // $container.imagesLoaded(function() {
+    //   $container.masonry({
+    //     itemSelector: '.gridLoading figure',
+    //     isFitWidth: true
+    //   });
+    // });
 
 
     var $containerPswp = $('.pswp-gallery');

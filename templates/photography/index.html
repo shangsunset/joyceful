@@ -45,56 +45,39 @@
 {#   <p class="rotate-text" id="my-albums">Places</p> #}
 {# </div> #}
 
-<div class="grid gridLoading effect-2" id="gridLoading">
-  {% count_big as big %}
-  {% count_small as small %}
+<div class="grid gridLoading effect-2 container-fluid" id="gridLoading">
+  {% set_num_of_albums as album_num %}
+
   {% for album in albums %}
-    {% random_number as rand %}
-    {% if rand == 1 %}
-      {% if small < 2 %}
-        {% increment small as small %}
-        <figure class="effect-milo" style="width: 25%;">
-        <img src="..{{album.album_cover_thumbnail.url}}" alt=""/>
-          <figcaption>
-            <h2><span>{{album.name}}</span></h2>
-            <p>Steve was afraid of the Boogieman.</p>
-            <a href="/albums/{{album.get_absolute_url}}">View more</a>
-          </figcaption>			
-        </figure>
-      {% else %}
+    {% if album_num == 0 or album_num == 5 %}
+        {% increment album_num as album_num %}
         <figure class="effect-milo" style="width: 50%;">
-        <img src="..{{album.album_cover_thumbnail.url}}" alt=""/>
+        <img src="..{{album.album_cover_thumbnail.url}}" alt="{{album_num}}"/>
           <figcaption>
             <h2><span>{{album.name}}</span></h2>
             <p>Steve was afraid of the Boogieman.</p>
             <a href="/albums/{{album.get_absolute_url}}">View more</a>
           </figcaption>			
         </figure>
-      {% endif %}
-
+        {% if album_num > 5 %}
+          {% set_num_of_albums as album_num %}
+        {% endif %}
     {% else %}
-      {% if big < 1 %}
-        {% increment big as big %}
-        <figure class="effect-milo" style="width: 50%;">
-        <img src="..{{album.album_cover_thumbnail.url}}" alt=""/>
-          <figcaption>
-            <h2><span>{{album.name}}</span></h2>
-            <p>Steve was afraid of the Boogieman.</p>
-            <a href="/albums/{{album.get_absolute_url}}">View more</a>
-          </figcaption>			
-        </figure>
-      {% else %}
-        <figure class="effect-milo" style="width: 25%;">
-        <img src="..{{album.album_cover_thumbnail.url}}" alt=""/>
-          <figcaption>
-            <h2><span>{{album.name}}</span></h2>
-            <p>Steve was afraid of the Boogieman.</p>
-            <a href="/albums/{{album.get_absolute_url}}">View more</a>
-          </figcaption>			
-        </figure>
-      {% endif %}
 
+        {% increment album_num as album_num %}
+        <figure class="effect-milo" style="width: 25%;">
+        <img src="..{{album.album_cover_thumbnail.url}}" alt="{{album_num}}"/>
+          <figcaption>
+            <h2><span>{{album.name}}</span></h2>
+            <p>Steve was afraid of the Boogieman.</p>
+            <a href="/albums/{{album.get_absolute_url}}">View more</a>
+          </figcaption>			
+        </figure>
+        {% if album_num > 5 %}
+          {% set_num_of_albums as album_num %}
+        {% endif %}
     {% endif %}
+
   {% endfor %}
 </div>
 
