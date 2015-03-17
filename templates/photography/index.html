@@ -54,41 +54,41 @@
 </ul>
 
 
-<div class="grid gridLoading effect-2 container-fluid" id="gridLoading">
-  {% set_num_of_albums as album_num %}
-
-  {% for album in albums %}
-    {% if album_num == 0 or album_num == 5 %}
-        {% increment album_num as album_num %}
-        <figure class="effect-milo" style="width: 50%;">
-        <img src="..{{album.album_cover_thumbnail.url}}" alt="{{album_num}}"/>
-          <figcaption>
-            <h3><span>{{album.name}}</span></h3>
-            <p>Steve was afraid of the Boogieman.</p>
-            <a href="/albums/{{album.get_absolute_url}}">View more</a>
-          </figcaption>			
-        </figure>
-        {% if album_num > 5 %}
-          {% set_num_of_albums as album_num %}
-        {% endif %}
-    {% else %}
-
-        {% increment album_num as album_num %}
-        <figure class="effect-milo" style="width: 25%;">
-        <img src="..{{album.album_cover_thumbnail.url}}" alt="{{album_num}}"/>
-          <figcaption>
-            <h3><span>{{album.name}}</span></h3>
-            <p>Steve was afraid of the Boogieman.</p>
-            <a href="/albums/{{album.get_absolute_url}}">View more</a>
-          </figcaption>			
-        </figure>
-        {% if album_num > 5 %}
-          {% set_num_of_albums as album_num %}
-        {% endif %}
-    {% endif %}
-
-  {% endfor %}
-</div>
+{# <div class="grid gridLoading effect-2 container-fluid" id="gridLoading"> #}
+{#   {% set_num_of_albums as album_num %} #}
+{#  #}
+{#   {% for album in albums %} #}
+{#     {% if album_num == 0 or album_num == 5 %} #}
+{#         {% increment album_num as album_num %} #}
+{#         <figure class="effect-milo" style="width: 50%;"> #}
+{#         <img src="..{{album.album_cover_thumbnail.url}}" alt="{{album_num}}"/> #}
+{#           <figcaption> #}
+{#             <h3><span>{{album.name}}</span></h3> #}
+{#             <p>Steve was afraid of the Boogieman.</p> #}
+{#             <a href="/albums/{{album.get_absolute_url}}">View more</a> #}
+{#           </figcaption>			 #}
+{#         </figure> #}
+{#         {% if album_num > 5 %} #}
+{#           {% set_num_of_albums as album_num %} #}
+{#         {% endif %} #}
+{#     {% else %} #}
+{#  #}
+{#         {% increment album_num as album_num %} #}
+{#         <figure class="effect-milo" style="width: 25%;"> #}
+{#         <img src="..{{album.album_cover_thumbnail.url}}" alt="{{album_num}}"/> #}
+{#           <figcaption> #}
+{#             <h3><span>{{album.name}}</span></h3> #}
+{#             <p>Steve was afraid of the Boogieman.</p> #}
+{#             <a href="/albums/{{album.get_absolute_url}}">View more</a> #}
+{#           </figcaption>			 #}
+{#         </figure> #}
+{#         {% if album_num > 5 %} #}
+{#           {% set_num_of_albums as album_num %} #}
+{#         {% endif %} #}
+{#     {% endif %} #}
+{#  #}
+{#   {% endfor %} #}
+{# </div> #}
 
 
 {% load staticfiles %}
@@ -99,11 +99,11 @@
 <script type="text/javascript" charset="utf-8">
 
 
-  new AnimOnScroll( document.getElementById( 'gridLoading' ), {
-    minDuration : 0.4,
-    maxDuration : 0.7,
-    viewportFactor : 0.2
-  });
+  {# new AnimOnScroll( document.getElementById( 'gridLoading' ), { #}
+  {#   minDuration : 0.4, #}
+  {#   maxDuration : 0.7, #}
+  {#   viewportFactor : 0.2 #}
+  {# }); #}
   
 
   {# var stickyTriangle = $('#triangle-topleft').offset().top; #}
@@ -147,8 +147,6 @@
 {% block customstyle %}
 
   <style>
-    .top-menu-bar {
-    }
   </style>
 {% endblock %}
 

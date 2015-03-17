@@ -2,9 +2,9 @@
 .button-toggle-navigation {
   background-color: transparent;
   border: 0;
-  border-bottom: 0.2em solid #81d8d0;
-  border-top: 0.2em solid #81d8d0;
-  font-size: 25px;
+  border-bottom: 0.2em solid #fff;
+  border-top: 0.2em solid #fff;
+  font-size: 20px;
   cursor: pointer;
   height: 1em;
   margin: .25em .65em;
@@ -30,7 +30,7 @@
 
 .button-toggle-navigation::after {
 
-  border-bottom: 0.2em solid #81d8d0;
+  border-bottom: 0.2em solid #fff;
   bottom: 0.193em;
   content: '';
   height: 0;

@@ -13,6 +13,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         {% load staticfiles %}
         <link rel='shortcut icon' type='image/x-icon' href='{% static 'favicon.ico' %}' />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link href='http://fonts.googleapis.com/css?family=Raleway:900' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Roboto:100, 400' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
@@ -61,12 +62,13 @@
                       <strong>Joyceful</strong>
                   </a>
                   <span class="right">
-                      {# <a id="trigger-overlay"><i class="fa fa-envelope fa-lg"></i></a> #}
+
+                      <a class="sub-menu" href="mailto:someone@example.com">Feedback</a>
+                      <a class="sub-menu" href="http://instagram.com/joycecyoj01/">Instagram</a>
 
                       <button id="trigger-overlay" class="button-toggle-navigation">
                         <span>Toggle Navigation</span>
                       </button>
-                      {# <button class="menu-button" id="open-button">click</button> #}
                   </span>
                   <div class="clr"></div>
               </nav>
@@ -83,9 +85,8 @@
         <div class="container">
 
           <div class="text-muted">
-            <span>© 2014 Joyceful. All Rights Reserved.</span>
-            <a class="meta-links" href="http://instagram.com/joycecyoj01/"><i class="fa fa-instagram fa-lg"></i>Instagram</a>
-            <a class="meta-links" href="mailto:someone@example.com" id="trigger-overlay"><i class="fa fa-envelope fa-lg"></i>Feedback</a>
+            <span>© 2015 Joyceful. All Rights Reserved.</span>
+            <p class="meta-links">Made with <i class="fa fa-heart"></i>by <a href="http://twitter.com/shangyeshen">@shangyeshen</a></p>
           </div>
 
         </div>
