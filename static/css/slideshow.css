@@ -63,6 +63,7 @@
     line-height: 200px;
     color: white;
     text-transform: capitalize;
+    cursor: default;
 }
 /* .cb-slideshow li:nth-child(1) span { background-image: url(../images/1.jpg) } */
 .cb-slideshow li:nth-child(2) span {

@@ -1,5 +1,6 @@
 {% extends 'photography/includes/base.html' %}
 
+
 {% block content %}
 
 
@@ -125,3 +126,28 @@
     </script>
 {% endblock %}
 
+{% block customstyle %}
+
+  <style>
+
+    .footer {
+      position: relative;
+      width: 100%;
+      /* Set the fixed height of the footer here */
+      /* height: 150px; */
+      /* background-color: #81d8d0; */
+    }
+    footer .text-muted {
+      color: #333;
+      cursor: default;
+    }
+    footer .meta-links {
+      color: #333;
+
+    }
+    .meta-links a {
+      color: #333;
+    }
+
+  </style>
+{% endblock %}

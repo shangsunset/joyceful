@@ -17,6 +17,7 @@
 			classie.remove( overlay, 'open' );
 			classie.add( overlay, 'close' );
       // $('#logo').css('color', '#81d8d0');
+      $('.sub-menu').show();
       $('.button-toggle-navigation').removeClass('special');
       $('body').removeClass('body-fixed');
 
@@ -39,6 +40,7 @@
 		else if( !classie.has( overlay, 'close' ) ) {
 			classie.add( overlay, 'open' );
       // $('#logo').css('color', '#fff');
+      $('.sub-menu').hide();
       $('.button-toggle-navigation').addClass('special');
       $('body').addClass('body-fixed');
 		}
