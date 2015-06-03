@@ -23,8 +23,6 @@ def photos_by_location(request, slug):
     context_dict = {}
 
     try:
-
-        #TODO: lowercase album name on save
         album = get_object_or_404(Album, name=album_name)
         photos = get_list_or_404(Photo, album=album)
         context_dict['album'] = album

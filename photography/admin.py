@@ -13,6 +13,9 @@ class AlbumAdmin(admin.ModelAdmin):
     inlines = [(PhotoInline)]
     prepopulated_fields = {"slug": ("name",)}
 
+    def save_model(self, request, obj, form, change):
+        obj.name = obj.name.lower()
+        obj.save()
 
 
 admin.site.register(Album, AlbumAdmin)
