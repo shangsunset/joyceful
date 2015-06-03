@@ -21,14 +21,12 @@ lunchy stop postgres
 * [reference](https://www.digitalocean.com/community/tutorials/how-to-use-roles-and-manage-grant-permissions-in-postgresql-on-a-vps--2)
 
 ```zsh
+#superuser
 createdb `whoami`
 createuser joyceful
-
 #go to postgres command line
 psql 
-
 CREATE DATABASE joycefuldb OWNER joyceful;
-
 #add password to role
 \password joyceful
 ```
@@ -37,7 +35,6 @@ CREATE DATABASE joycefuldb OWNER joyceful;
 ## Migrations
 
 ```zsh
-
 ./manage.py syncdb
 ./manage.py schemamigration photography --initial
 ./manage.py migrate photography

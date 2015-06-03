@@ -7,8 +7,6 @@ import json
 from django.http import HttpResponse
 from django.core.mail import send_mail, BadHeaderError
 
-def hello_world(request):
-    return HttpResponse('Hello, world!')
 
 def index(request):
     context = RequestContext(request)
@@ -25,7 +23,7 @@ def photos_by_location(request, slug):
     context_dict = {}
 
     try:
-        album = get_object_or_404(Album, name=album_name)
+        album = get_object_or_404(Album, name=album_name.lower())
         photos = get_list_or_404(Photo, album=album)
         context_dict['album'] = album
         context_dict['photos'] = photos
