@@ -303,37 +303,32 @@ body
 }
 
 
-/* .carousel-control.left, .carousel-control.right { */
-/*     background-image: none !important */
-/* } */
 
 #album-cover {
-  padding-bottom: 50px;
-  height: 100%;
-  /* filter: blur(5px); */
-  /* -webkit-filter: blur(5px); */
-  /* -moz-filter: blur(5px); */
-  /* -ms-filter: blur(5px); */
-  margin: -15px -20px -20px -15px;
-  /* overflow: hidden; */
-}
-
-
-header.album-cover {
-
-  background: #fff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
-  height: 450px;
-  /* padding: 10px 0 50px; */
-  /* border-bottom: 10px solid #efefef; */
-  min-height: initial;
+  width: 100%;
+  min-height:400px;
+  border-bottom: 10px solid #efefef;
 }
 
-/* .container-cover { */
-/*   width: 960px ; */
-/*   margin: 0 auto; */
-/* } */
+@media screen and (max-width: 800px) {
 
+  #album-cover {
+    min-height:250px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  #album-cover {
+    min-height:150px;
+  }
+}
 
 .album-title {
   text-transform: capitalize;
