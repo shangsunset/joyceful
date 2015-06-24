@@ -331,6 +331,13 @@ body
   #album-cover {
     min-height:250px;
   }
+
+  .album-title {
+    font-size: 5rem !important;
+  }
+  .album-description {
+    font-size: 2rem !important;
+  }
 }
 
 
@@ -343,6 +350,12 @@ body
     display: none !important;
   }
 
+  .album-title {
+    font-size: 3rem !important;
+  }
+  .album-description {
+    font-size: 1.5rem !important;
+  }
 }
 
 .album-title {
@@ -361,6 +374,7 @@ body
   font-family: 'Roboto', sans-serif;
   font-style: italic;
   font-weight: 100;
+  font-size: 3rem;
 }
 
 
@@ -436,11 +450,6 @@ body
 }
 
 
-#pswp-container {
-  padding: 50px 0;
-  /* background: #f7f7f7; */
-
-}
 
 
 .grid {

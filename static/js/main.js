@@ -1,9 +1,4 @@
 $(function(){
-
-
-
-
-
   // Hide Header on on scroll down
   var didScroll;
   var lastScrollTop = 0;
@@ -105,9 +100,9 @@ $(function(){
     $containerPswp.imagesLoaded( function() {
       $containerPswp.masonry({
         itemSelector: '.pswp-gallery figure',
-        // columWidth: 500,
+        columWidth: 250,
         isFitWidth: true
-      
+
       });
     });
 

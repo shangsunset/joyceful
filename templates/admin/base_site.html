@@ -1,0 +1,9 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Joyceful') }}{% endblock %}
+
+{% block branding %}
+<a class="navbar-brand" href="{% url 'admin:index' %}">{{ site_header|default:_('Joyceful Admin') }}</a>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

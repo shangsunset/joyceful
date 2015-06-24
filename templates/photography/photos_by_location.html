@@ -7,21 +7,21 @@
   <div id="album-cover" data-depth="0.10" style="background-image:url('../../media/{{album.album_cover}}');" data-0="background-position:0px -100px;" data-500="background-position:0px -300px;"></div>
 
   <div class="container album-intro">
-    <div class="center-block row">
+    <div class="center-block">
       <h1 class="album-title">{{album.name}}</h1>
-      <h2 class="album-description">This is a dummy description. This is a dummy description. Doritos cheetos lays.</h2>
+      <h2 class="album-description">{{album.description}}</h2>
     </div>
   </div>
 
-  <div id="pswp-container">
-    <div id="gridLoading" class="pswp-gallery gridLoading effect-3" itemscope itemtype="http://schema.org/ImageGallery">
+  <div id="pswp-container" class="container">
+    <div id="gridLoading" class="pswp-gallery effect-3">
 
         {% for photo in photos %}
-        <figure class="effect-bubba" itemscope itemtype="http://schema.org/ImageObject">
-              <img src="../../{{photo.image_thumbnail.url}}" itemprop="thumbnail" alt="Image description" />
-            <figcaption itemprop="caption description">
-              <p>this is image caption</p>
-              <a href="../../media/{{photo.image}}" itemprop="contentUrl" data-size="{{photo.image.width}}x{{photo.image.height}}">
+        <figure class="effect-bubba">
+              <img src="../../{{photo.image_thumbnail.url}}" alt="Image description" />
+            <figcaption>
+              <p>{{photo.caption}}</p>
+              <a href="../../media/{{photo.image}}" data-size="{{photo.image.width}}x{{photo.image.height}}">
               </a>
             </figcaption>
         </figure>
@@ -101,29 +101,31 @@
 
 
 
-      {% load staticfiles %}
-      <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
-      <script src="{% static 'js/AnimOnScroll.js' %}"></script>
-      {# <script src="{% static 'js/parallax.js' %}"></script> #}
-      <script>
+  {% load staticfiles %}
+  <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/AnimOnScroll.js' %}"></script>
+  {# <script src="{% static 'js/parallax.js' %}"></script> #}
+  <script>
 
-        {# var scene = document.getElementById('scene'); #}
-        {# var parallax = new Parallax(scene); #}
+    {# var scene = document.getElementById('scene'); #}
+    {# var parallax = new Parallax(scene); #}
 
-        new AnimOnScroll( document.getElementById( 'gridLoading' ), {
-          minDuration : 0.4,
-          maxDuration : 0.7,
-          viewportFactor : 0.2
-        });
-
-
+    new AnimOnScroll( document.getElementById( 'gridLoading' ), {
+      minDuration : 0.4,
+      maxDuration : 0.7,
+      viewportFactor : 0.2
+    });
 
 
-      $('.button-toggle-navigation').on('click', function() {
-        $(this).toggleClass('isActive');
 
-      });
-      </script>
+
+  $('.button-toggle-navigation').on('click', function() {
+    $(this).toggleClass('isActive');
+
+  });
+  </script>
+
+
 {% endblock %}
 
 {% block customstyle %}
@@ -150,4 +152,5 @@
     }
 
   </style>
+
 {% endblock %}

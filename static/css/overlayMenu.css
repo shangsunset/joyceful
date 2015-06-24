@@ -30,11 +30,18 @@
 	position: relative;
 	top: 50%;
 	height: 60%;
-	font-size: 54px;
+	font-size: 4rem;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
 
+
+@media screen and (max-width: 600px) {
+
+  .overlay nav {
+    font-size: 3rem;
+  }
+}
 .overlay ul {
 	list-style: none;
 	padding: 0;
@@ -90,6 +97,7 @@
 .overlay-slidedown nav {
 	-webkit-perspective: 1200px;
 	perspective: 1200px;
+  overflow-y: scroll;
 }
 
 .overlay-slidedown nav ul {
@@ -113,7 +121,7 @@
 
 @media screen and (max-height: 30.5em) {
 	.overlay nav {
-		height: 70%;
+		height: 80%;
 		font-size: 34px;
 	}
 	.overlay ul li {
