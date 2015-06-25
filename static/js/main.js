@@ -86,15 +86,6 @@ $(function(){
     });
 
 
-    // var $container = $('.gridLoading');
-    // // initialize Masonry after all images have loaded
-    // $container.imagesLoaded(function() {
-    //   $container.masonry({
-    //     itemSelector: '.gridLoading figure',
-    //     isFitWidth: true
-    //   });
-    // });
-
 
     var $containerPswp = $('.pswp-gallery');
     $containerPswp.imagesLoaded( function() {
@@ -106,7 +97,8 @@ $(function(){
       });
     });
 
-
+    //disable right click on images
+    $('body').on('contextmenu', 'img', function(e){ return false; });
 });
 
 
