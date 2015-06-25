@@ -20,7 +20,7 @@ class AlbumCoverThumbnail(ImageSpec):
 register.generator('photography:album:album_cover_thumbnail', AlbumCoverThumbnail)
 
 class Album(models.Model):
-    name = models.CharField(max_length=120, null=False, blank=True)
+    name = models.CharField(max_length=120, null=False)
     description = models.TextField(max_length=400, null=True, blank=True)
     album_cover = models.ImageField(upload_to='photos/album_cover')
     album_cover_thumbnail = ImageSpecField(source='album_cover',
@@ -47,7 +47,11 @@ class ImageThumbnail(ImageSpec):
     @property
     def processors(self):
         model, field_name = get_field_info(self.source)
-        return [ResizeToFit(250, model.image.height/2)]
+        if model.image.height > model.image.width:
+            return [ResizeToFill(250, 352)]
+        else:
+            return [ResizeToFill(250, 169)]
+
 
 register.generator('photography:photo:image_thumbnail', ImageThumbnail)
 
@@ -58,13 +62,13 @@ class Photo(models.Model):
 
 
     album = models.ForeignKey(Album, related_name='photos')
-    title = models.CharField(max_length=120, null=False, blank=True)
+    title = models.CharField(max_length=120, null=False)
     image = models.ImageField(upload_to='photos')
     image_thumbnail = ImageSpecField(source='image',
                                       id='photography:photo:image_thumbnail')
     caption = models.CharField(max_length=400, null=True, blank=True)
     created = models.DateField('Date Ceated')
-    slug = models.SlugField(null=True, blank=True)
+    slug = models.SlugField()
 
 
 
