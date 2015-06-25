@@ -21,7 +21,7 @@ register.generator('photography:album:album_cover_thumbnail', AlbumCoverThumbnai
 
 class Album(models.Model):
     name = models.CharField(max_length=120, null=False, blank=True)
-    description = models.CharField(max_length=400, null=True, blank=True)
+    description = models.TextField(max_length=400, null=True, blank=True)
     album_cover = models.ImageField(upload_to='photos/album_cover')
     album_cover_thumbnail = ImageSpecField(source='album_cover',
                                       id='photography:album:album_cover_thumbnail')
@@ -64,7 +64,7 @@ class Photo(models.Model):
                                       id='photography:photo:image_thumbnail')
     caption = models.CharField(max_length=400, null=True, blank=True)
     created = models.DateField('Date Ceated')
-    slug = models.SlugField(max_length=40, unique=True)
+    slug = models.SlugField(null=True, blank=True)
 
 
 
