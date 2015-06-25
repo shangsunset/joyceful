@@ -3,5 +3,4 @@ media/
 static_collected/
 *.pyc
 .DS_Store
-photography/migrations/
 *.db
