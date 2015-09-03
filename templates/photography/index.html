@@ -3,7 +3,6 @@
 {% load custom_tags %}
 {% block content %}
 
-
 {# <div id="scene" class="carousel slide" data-ride="carousel"> #}
   <!-- Indicators -->
   {# <ol class="carousel-indicators"> #}
@@ -12,84 +11,57 @@
   {#   {% endfor %} #}
   {# </ol> #}
 
-	<!-- Wrapper for slides -->
-{# 	<div class="carousel-inner layer" role="listbox"> #}
-{#     {% for album in albums %} #}
-{# 		<div class="item"> #}
-{#       <div class="fill layer" data-depth="0.10"><img src="../media/{{album.album_cover}}" style="height: 600px; width: auto; margin: 100px auto 0px;"></div> #}
-{# 		</div> #}
-{#     {% endfor %} #}
-{#  #}
-{# 	</div> #}
-{#  #}
-{#   <section> #}
-{#       <nav class="nav-circlepop"> #}
-{#           <a class="prev" href="#scene" data-slide="prev"> #}
-{#               <span class="icon-wrap"></span> #}
-{#           </a> #}
-{#           <a class="next" href="#scene" data-slide="next"> #}
-{#               <span class="icon-wrap"></span> #}
-{#           </a> #}
-{#       </nav> #}
-{#   </section> #}
-{#  #}
-{#  #}
-{#  #}
-{# </div> #}
+<!-- Wrapper for slides -->
+{#  	<div class="carousel-inner layer" role="listbox">  #}
+{#      {% for album in albums %}  #}
+{#  		<div class="item">  #}
+{#        <div class="fill layer" data-depth="0.10"><img src="../media/{{album.album_cover}}" style="height: 600px; width: auto; margin: 100px auto 0px;"></div>  #}
+{#  		</div>  #}
+{#      {% endfor %}  #}
+{#    #}
+{#  	</div> #}
+{#    <section> #}
+{#        <nav class="nav-circlepop"> #}
+{#            <a class="prev" href="#scene" data-slide="prev"> #}
+{#                <span class="icon-wrap"></span> #}
+{#            </a> #}
+{#            <a class="next" href="#scene" data-slide="next"> #}
+{#                <span class="icon-wrap"></span>  #}
+{#            </a>  #}
+{#        </nav>  #}
+{#    </section>  #}
+{#  </div>  #}
 <!-- end of carousel -->
 
+<div class="container">
 
 
+  <div id="homepage-album-cover" style="background-image:url('../../media/{{random_album.album_cover}}');">
+  </div>
 
-{# <div id="triangle-topleft"> #}
-{#   <p class="rotate-text" id="my-albums">Places</p> #}
-{# </div> #}
-
-
-<ul class="cb-slideshow container">
-
-  {% for album in albums %}
-  <li><span style="background-image: url('../../media/{{album.album_cover}}');"></span><div class="center-block"><h3>{{album.name}}</h3></div></li>
-  {% endfor %}
-</ul>
-
-
-{# <div class="grid gridLoading effect-2 container-fluid" id="gridLoading"> #}
-{#   {% set_num_of_albums as album_num %} #}
+{# <ul class="cb-slideshow container"> #}
 {#  #}
 {#   {% for album in albums %} #}
-{#     {% if album_num == 0 or album_num == 5 %} #}
-{#         {% increment album_num as album_num %} #}
-{#         <figure class="effect-milo" style="width: 50%;"> #}
-{#         <img src="..{{album.album_cover_thumbnail.url}}" alt="{{album_num}}"/> #}
-{#           <figcaption> #}
-{#             <h3><span>{{album.name}}</span></h3> #}
-{#             <p>Steve was afraid of the Boogieman.</p> #}
-{#             <a href="/albums/{{album.get_absolute_url}}">View more</a> #}
-{#           </figcaption>			 #}
-{#         </figure> #}
-{#         {% if album_num > 5 %} #}
-{#           {% set_num_of_albums as album_num %} #}
-{#         {% endif %} #}
-{#     {% else %} #}
-{#  #}
-{#         {% increment album_num as album_num %} #}
-{#         <figure class="effect-milo" style="width: 25%;"> #}
-{#         <img src="..{{album.album_cover_thumbnail.url}}" alt="{{album_num}}"/> #}
-{#           <figcaption> #}
-{#             <h3><span>{{album.name}}</span></h3> #}
-{#             <p>Steve was afraid of the Boogieman.</p> #}
-{#             <a href="/albums/{{album.get_absolute_url}}">View more</a> #}
-{#           </figcaption>			 #}
-{#         </figure> #}
-{#         {% if album_num > 5 %} #}
-{#           {% set_num_of_albums as album_num %} #}
-{#         {% endif %} #}
-{#     {% endif %} #}
-{#  #}
+{#   <li><span style="background-image: url('../../media/{{album.album_cover}}');"></span><div class="center-block"><h3>{{album.name}}</h3></div></li> #}
 {#   {% endfor %} #}
-{# </div> #}
+{# </ul> #}
 
+<div class="grid gridLoading effect-2 container-fluid" id="gridLoading">
+
+  {% for album in albums %}
+    <figure class="effect-milo">
+    <img src="..{{album.album_cover_thumbnail.url}}" alt="{{album_num}}"/>
+      <figcaption>
+        <h3><span>{{album.name}}</span></h3>
+        <p>Steve was afraid of the Boogieman.</p>
+        <a href="/albums/{{album.get_absolute_url}}">View more</a>
+      </figcaption>			
+    </figure>
+
+  {% endfor %}
+</div>
+
+</div>
 
 {% load staticfiles %}
 <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
@@ -99,27 +71,14 @@
 <script type="text/javascript" charset="utf-8">
 
 
-  {# new AnimOnScroll( document.getElementById( 'gridLoading' ), { #}
-  {#   minDuration : 0.4, #}
-  {#   maxDuration : 0.7, #}
-  {#   viewportFactor : 0.2 #}
-  {# }); #}
+  new AnimOnScroll( document.getElementById( 'gridLoading' ), {
+    minDuration : 0.4,
+    maxDuration : 0.7,
+    viewportFactor : 0.2
+  });
   
 
-  {# var stickyTriangle = $('#triangle-topleft').offset().top; #}
-  {# $(window).resize(function() { #}
-  {#   stickyTriangle = $('#triangle-topleft').offset().top; #}
-  {#  #}
-  {# }); #}
 
-  {# $(window).scroll(function(event){ #}
-  {#     if ($(window).scrollTop() > stickyTriangle) { #}
-  {#         $('#triangle-topleft').addClass('affix'); #}
-  {#     } #}
-  {#     else { #}
-  {#         $('#triangle-topleft').removeClass('affix'); #}
-  {#     }   #}
-  {# }); #}
 
 
   {# var scene = document.getElementById('scene'); #}

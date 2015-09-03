@@ -1,20 +1,27 @@
-from django.shortcuts import render_to_response, get_list_or_404, get_object_or_404, render
-from .models import Album, Photo
+import json
+from django.shortcuts import get_list_or_404, \
+    get_object_or_404, Http404
 from django.template import RequestContext
 from django.template.response import TemplateResponse
 from .forms import ContactForm
-import json
 from django.http import HttpResponse
 from django.core.mail import send_mail, BadHeaderError
+from .models import Album, Photo
 
 
-def index(request):
+def latest_album(request):
     context = RequestContext(request)
-    albums = get_list_or_404(Album)
-    context_dict = {'albums': albums}
+    try:
+        latest_album = Album.objects.latest('id')
+    except Album.DoesNotExist:
+        raise Http404("Didnt find any Album matches the query.")
+    photos = get_list_or_404(Photo, album=latest_album)
+    context_dict = {}
+    context_dict['album'] = latest_album
+    context_dict['photos'] = photos
 
-    return render_to_response('photography/index.html', context_dict, context)
-
+    return TemplateResponse(request, 'photography/photos_by_location.html',
+                            context_dict, context)
 
 
 def photos_by_location(request, slug):
@@ -22,16 +29,13 @@ def photos_by_location(request, slug):
     album_name = slug.replace('-', ' ')
     context_dict = {}
 
-    try:
-        album = get_object_or_404(Album, name=album_name)
-        photos = get_list_or_404(Photo, album=album)
-        context_dict['album'] = album
-        context_dict['photos'] = photos
-    except Album.DoesNotExist as e:
-        print e
+    album = get_object_or_404(Album, name=album_name)
+    photos = get_list_or_404(Photo, album=album)
+    context_dict['album'] = album
+    context_dict['photos'] = photos
 
-    return TemplateResponse(request, 'photography/photos_by_location.html', context_dict)
-
+    return TemplateResponse(request, 'photography/photos_by_location.html',
+                            context_dict, context)
 
 
 def contact(request):
@@ -58,16 +62,5 @@ def contact(request):
             data['error'] = 'Something is wrong'
             print form.errors
 
-        return HttpResponse(json.dumps(data), content_type = "application/json")
-    # else:
-    #     form = ContactForm()
-    # return render_to_response('photography/contact_form.html', {'form': form}, context)
-
-
-# def custom_404(request):
-#     return render_to_response('404.html')
-#
-# def server_error(request):
-#     response = render(request, '500.html')
-#     response.status_code = 500
-#     return response
+        return HttpResponse(json.dumps(data), context,
+                            content_type="application/json")

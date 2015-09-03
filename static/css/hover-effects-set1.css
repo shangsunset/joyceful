@@ -13,11 +13,11 @@
 	position: relative;
 	float: left;
 	overflow: hidden;
-	/* margin: 10px 1%; */
-	/* min-width: 320px; */
-	/* max-width: 480px; */
-	/* max-height: 360px; */
-	/* width: 48%; */
+	margin: 10px 1%;
+	min-width: 320px;
+	max-width: 480px;
+	max-height: 360px;
+	width: 48%;
 	/* background: #3085a3; */
   border: 1px solid white;
 	text-align: center;
@@ -293,9 +293,10 @@ figure.effect-bubba img {
 }
 
 figure.effect-bubba:hover img {
-	opacity: 0.4;
+	opacity: 0.8;
 }
 
+/*
 figure.effect-bubba figcaption::before,
 figure.effect-bubba figcaption::after {
 	position: absolute;
@@ -323,6 +324,7 @@ figure.effect-bubba figcaption::after {
 	transform: scale(1,0);
 }
 
+*/
 figure.effect-bubba h3 {
 	padding-top: 30%;
 	-webkit-transition: -webkit-transform 0.35s;
