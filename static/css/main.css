@@ -321,23 +321,23 @@ body
   background-repeat: no-repeat;
   text-align: center;
   width: 100%;
-  min-height:400px;
+  min-height:450px;
   border-bottom: 10px solid #efefef;
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
 
 
-  #album-cover {
+  .album-cover {
     background-position: 0px -80px !important;
   }
 
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
 
-  #album-cover {
+  .album-cover {
     min-height:250px;
   }
 
@@ -352,8 +352,8 @@ body
 
 @media screen and (max-width: 600px) {
 
-  #album-cover {
-    min-height:150px;
+  .album-cover {
+    min-height:150px !important;
   }
   .top-menu-bar span.right a {
     display: none !important;
