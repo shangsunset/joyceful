@@ -321,10 +321,16 @@ body
   background-repeat: no-repeat;
   text-align: center;
   width: 100%;
-  min-height:450px;
+  min-height:500px;
   border-bottom: 10px solid #efefef;
 }
 
+@media screen and (max-width: 1200px) {
+
+  .album-cover {
+    min-height:400px;
+  }
+}
 
 @media screen and (max-width: 1050px) {
 
@@ -333,6 +339,14 @@ body
     background-position: 0px -80px !important;
   }
 
+}
+
+
+@media screen and (max-width: 950px) {
+
+  .album-cover {
+    min-height:300px;
+  }
 }
 
 @media screen and (max-width: 850px) {
