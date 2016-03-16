@@ -1,12 +1,16 @@
 import json
 from django.shortcuts import get_list_or_404, \
-    get_object_or_404, Http404
+    get_object_or_404, Http404, render_to_response
 from django.template import RequestContext
-from django.template.response import TemplateResponse
+# from django.template.response import TemplateResponse
 from .forms import ContactForm
 from django.http import HttpResponse
 from django.core.mail import send_mail, BadHeaderError
 from .models import Album, Photo
+
+
+# def index(request):
+#     return HttpResponse('hello')
 
 
 def latest_album(request):
@@ -20,8 +24,8 @@ def latest_album(request):
     context_dict['album'] = latest_album
     context_dict['photos'] = photos
 
-    return TemplateResponse(request, 'photography/photos_by_location.html',
-                            context_dict, context)
+    return render_to_response('photography/photos_by_location.html',
+                              context_dict, context)
 
 
 def photos_by_location(request, slug):
@@ -34,8 +38,8 @@ def photos_by_location(request, slug):
     context_dict['album'] = album
     context_dict['photos'] = photos
 
-    return TemplateResponse(request, 'photography/photos_by_location.html',
-                            context_dict, context)
+    return render_to_response('photography/photos_by_location.html',
+                              context_dict, context)
 
 
 def contact(request):

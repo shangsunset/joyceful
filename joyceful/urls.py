@@ -9,7 +9,7 @@ urlpatterns = patterns(
     '',
     url(r'^admin/', include(admin.site.urls)),
     # url(r'^$', 'photography.views.index', name='index'),
-    url(r'^$', RedirectView.as_view(url='/albums/latest/')),
+    url(r'^$', RedirectView.as_view(url='/albums/latest/', permanent=True)),
     url(r'^albums/', include('photography.urls')),
 )
 
